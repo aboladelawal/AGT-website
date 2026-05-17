@@ -1,0 +1,885 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Alpha Global Tech &amp; Consulting — We engineer what your business runs on</title>
+<meta name="description" content="Alpha Global Tech is an engineering and consulting firm. We build the software, systems, and automation a business runs on, engineered to hold up.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #0c0e12;
+    --ink-2: #101319;
+    --panel: #151922;
+    --panel-2: #1b2029;
+    --line: #262c36;
+    --line-soft: #1d222c;
+    --bone: #f3f2ee;
+    --text: #e8e8e6;
+    --text-2: #8e93a0;
+    --text-3: #585f6b;
+    --teal: #3aa3a0;
+    --teal-lo: #2b6f6e;
+    --teal-deep: #19403f;
+    --teal-wash: rgba(58,163,160,0.08);
+    --serif: 'Fraunces', Georgia, serif;
+    --sans: 'Inter', system-ui, sans-serif;
+    --mono: 'IBM Plex Mono', monospace;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  ::selection { background: var(--teal); color: var(--ink); }
+
+  body {
+    font-family: var(--sans);
+    background: var(--ink);
+    color: var(--text);
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.5;
+    letter-spacing: -0.005em;
+  }
+
+  body::after {
+    content: '';
+    position: fixed; inset: 0; pointer-events: none; z-index: 9999;
+    opacity: 0.022;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  .wrap { max-width: 1220px; margin: 0 auto; padding: 0 38px; }
+
+  /* ─── NAV ─── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+    transition: background .4s, border-color .4s, backdrop-filter .4s;
+    border-bottom: 1px solid transparent;
+  }
+  nav.scrolled {
+    background: rgba(12,14,18,.8);
+    backdrop-filter: blur(18px) saturate(1.3);
+    border-bottom: 1px solid var(--line-soft);
+  }
+  .nav-in {
+    max-width: 1220px; margin: 0 auto; padding: 22px 38px;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .brand { display: flex; align-items: center; gap: 13px; text-decoration: none; }
+  .brand-mark { width: 32px; height: 32px; flex-shrink: 0; }
+  .brand-mark svg { width: 100%; height: 100%; display: block; }
+  .brand-txt {
+    font-family: var(--serif); font-size: 17px; font-weight: 500;
+    color: var(--text); letter-spacing: -0.01em;
+  }
+  .brand-txt b { font-weight: 600; }
+  .nav-links { display: flex; gap: 38px; align-items: center; }
+  .nav-links a {
+    text-decoration: none; color: var(--text-2);
+    font-size: 13px; font-weight: 400; transition: color .2s; position: relative;
+  }
+  .nav-links a:not(.nav-cta)::after {
+    content: ''; position: absolute; left: 0; bottom: -5px;
+    width: 0; height: 1px; background: var(--teal); transition: width .28s ease;
+  }
+  .nav-links a:not(.nav-cta):hover { color: var(--text); }
+  .nav-links a:not(.nav-cta):hover::after { width: 100%; }
+  .nav-cta {
+    color: var(--ink) !important; background: var(--bone);
+    padding: 9px 19px; border-radius: 7px;
+    font-weight: 500 !important; font-size: 13px !important;
+    transition: background .2s, transform .2s;
+  }
+  .nav-cta:hover { background: var(--teal); transform: translateY(-1px); }
+  .burger { display: none; background: none; border: none; cursor: pointer; padding: 6px; }
+  .burger span { display: block; width: 22px; height: 1.5px; background: var(--text); margin: 5px 0; transition: .3s; }
+
+  /* ─── HERO ─── */
+  .hero { position: relative; padding: 200px 0 116px; overflow: hidden; }
+  .hero-grid {
+    position: absolute; inset: 0; z-index: 0;
+    background-image:
+      linear-gradient(var(--line-soft) 1px, transparent 1px),
+      linear-gradient(90deg, var(--line-soft) 1px, transparent 1px);
+    background-size: 80px 80px;
+    -webkit-mask-image: radial-gradient(ellipse 80% 64% at 38% 26%, #000 0%, transparent 82%);
+            mask-image: radial-gradient(ellipse 80% 64% at 38% 26%, #000 0%, transparent 82%);
+    opacity: .42;
+  }
+  .hero-halo {
+    position: absolute; top: -200px; left: 24%; width: 760px; height: 600px; z-index: 0;
+    background: radial-gradient(ellipse at center, var(--teal-wash), transparent 66%);
+  }
+  .hero-in { position: relative; z-index: 2; max-width: 920px; }
+  .eyebrow {
+    display: inline-flex; align-items: center; gap: 10px;
+    font-family: var(--mono); font-size: 11px; letter-spacing: .14em;
+    text-transform: uppercase; color: var(--text-2); margin-bottom: 38px;
+  }
+  .eyebrow .dot {
+    width: 6px; height: 6px; border-radius: 50%; background: var(--teal);
+    box-shadow: 0 0 0 0 rgba(58,163,160,.5); animation: pulse 3s infinite;
+  }
+  @keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(58,163,160,.5); }
+    70% { box-shadow: 0 0 0 9px rgba(58,163,160,0); }
+    100% { box-shadow: 0 0 0 0 rgba(58,163,160,0); }
+  }
+  .hero h1 {
+    font-family: var(--serif); font-size: clamp(46px, 6.4vw, 86px);
+    font-weight: 400; line-height: 1.0; letter-spacing: -0.032em; margin-bottom: 30px;
+  }
+  .hero h1 em { font-style: italic; font-weight: 500; color: var(--teal); }
+  .hero-sub {
+    font-size: 19px; line-height: 1.55; color: var(--text-2);
+    max-width: 540px; margin-bottom: 44px; font-weight: 300;
+  }
+  .hero-actions { display: flex; gap: 14px; align-items: center; flex-wrap: wrap; }
+  .btn {
+    font-family: var(--sans); font-size: 14px; font-weight: 500;
+    text-decoration: none; cursor: pointer; border: none;
+    padding: 14px 27px; border-radius: 8px;
+    transition: transform .2s, background .2s, box-shadow .2s, border-color .2s;
+    display: inline-flex; align-items: center; gap: 9px;
+  }
+  .btn-pri { background: var(--bone); color: var(--ink); }
+  .btn-pri:hover { transform: translateY(-2px); box-shadow: 0 14px 32px -10px rgba(243,242,238,.2); }
+  .btn-pri svg { transition: transform .25s; }
+  .btn-pri:hover svg { transform: translateX(3px); }
+  .btn-ghost { background: transparent; color: var(--text); border: 1px solid var(--line); }
+  .btn-ghost:hover { border-color: var(--teal-lo); transform: translateY(-2px); }
+
+  /* ─── CAPABILITY ROW ─── */
+  .caprow {
+    position: relative; z-index: 2; margin-top: 64px; padding-top: 26px;
+    border-top: 1px solid var(--line-soft);
+    display: flex; align-items: center; gap: 22px; flex-wrap: wrap;
+  }
+  .caprow span:not(.sep) {
+    font-family: var(--mono); font-size: 12px; letter-spacing: .08em;
+    text-transform: uppercase; color: var(--text-2);
+  }
+  .caprow .sep { width: 4px; height: 4px; border-radius: 50%; background: var(--teal-lo); }
+
+  /* ─── SECTION SCAFFOLD ─── */
+  .sec-pad { padding: 124px 0; }
+  .sec-head { max-width: 660px; margin-bottom: 60px; }
+  .sec-tag {
+    display: flex; align-items: center; gap: 13px;
+    font-family: var(--mono); font-size: 11px; letter-spacing: .13em;
+    text-transform: uppercase; color: var(--teal-lo); margin-bottom: 22px;
+  }
+  .sec-tag::before { content: ''; width: 30px; height: 1px; background: var(--teal-lo); }
+  .sec-title {
+    font-family: var(--serif); font-weight: 400;
+    font-size: clamp(31px, 4vw, 48px); line-height: 1.08; letter-spacing: -0.028em;
+  }
+  .sec-title em { font-style: italic; font-weight: 500; color: var(--teal); }
+  .sec-desc {
+    font-size: 16px; color: var(--text-2); font-weight: 300;
+    line-height: 1.6; margin-top: 18px;
+  }
+
+  /* ─── WHAT WE DO ─── */
+  #services { border-top: 1px solid var(--line-soft); background: var(--ink-2); }
+  .svc-grid {
+    display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px;
+    background: var(--line); border-radius: 14px; overflow: hidden;
+    border: 1px solid var(--line);
+  }
+  .svc {
+    background: var(--ink-2); padding: 38px 36px;
+    transition: background .3s; position: relative;
+  }
+  .svc:hover { background: var(--panel); }
+  .svc-num {
+    font-family: var(--mono); font-size: 11px; color: var(--teal-lo); margin-bottom: 18px;
+  }
+  .svc h3 {
+    font-family: var(--serif); font-size: 22px; font-weight: 500;
+    margin-bottom: 10px; letter-spacing: -0.012em;
+  }
+  .svc p { font-size: 14px; color: var(--text-2); font-weight: 300; line-height: 1.6; }
+
+  /* ─── EVIDENCE / PLATFORMS ─── */
+  #work { border-top: 1px solid var(--line-soft); }
+  .plat { margin-bottom: 92px; }
+  .plat:last-of-type { margin-bottom: 0; }
+  .plat-head {
+    display: flex; align-items: flex-end; justify-content: space-between;
+    gap: 30px; margin-bottom: 28px; flex-wrap: wrap;
+  }
+  .plat-id { max-width: 560px; }
+  .plat-kicker { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; }
+  .plat-kicker .badge {
+    font-family: var(--mono); font-size: 10px; letter-spacing: .08em;
+    text-transform: uppercase; color: var(--teal);
+    border: 1px solid var(--teal-lo); padding: 3px 9px; border-radius: 5px;
+  }
+  .plat-kicker .lang { font-family: var(--mono); font-size: 11px; color: var(--text-3); }
+  .plat-id h3 {
+    font-family: var(--serif); font-size: 30px; font-weight: 500;
+    letter-spacing: -0.02em; margin-bottom: 10px; line-height: 1.1;
+  }
+  .plat-id p { font-size: 15px; color: var(--text-2); font-weight: 300; line-height: 1.58; }
+  .plat-link {
+    font-family: var(--mono); font-size: 12px; color: var(--text);
+    text-decoration: none; display: inline-flex; align-items: center; gap: 8px;
+    border-bottom: 1px solid var(--line); padding-bottom: 4px; white-space: nowrap;
+    transition: color .2s, border-color .2s;
+  }
+  .plat-link:hover { color: var(--teal); border-color: var(--teal-lo); }
+
+  .frame {
+    border: 1px solid var(--line); border-radius: 14px; overflow: hidden;
+    background: var(--panel); position: relative;
+    box-shadow: 0 40px 80px -42px rgba(0,0,0,.85);
+  }
+  .frame-bar {
+    display: flex; align-items: center; gap: 7px;
+    padding: 12px 16px; border-bottom: 1px solid var(--line); background: var(--ink-2);
+  }
+  .frame-bar .fdot { width: 9px; height: 9px; border-radius: 50%; background: var(--line); }
+  .frame-bar .url {
+    margin-left: 14px; font-family: var(--mono); font-size: 11px; color: var(--text-3);
+    background: var(--panel); padding: 4px 12px; border-radius: 6px;
+    border: 1px solid var(--line-soft);
+  }
+  .frame-shot { display: block; width: 100%; height: auto; }
+  .plat-tall .frame-shot { max-height: 560px; object-fit: cover; object-position: top; }
+
+  .plat-points {
+    list-style: none; margin-top: 26px;
+    display: grid; grid-template-columns: repeat(2, 1fr); gap: 0;
+    border-top: 1px solid var(--line);
+  }
+  .plat-points li {
+    font-size: 13px; color: var(--text-2); font-weight: 300;
+    padding: 15px 22px 15px 24px; position: relative; line-height: 1.5;
+    border-bottom: 1px solid var(--line-soft); border-right: 1px solid var(--line-soft);
+  }
+  .plat-points li:nth-child(even) { border-right: none; }
+  .plat-points li::before {
+    content: ''; position: absolute; left: 0; top: 20px;
+    width: 7px; height: 7px; border: 1px solid var(--teal); transform: rotate(45deg);
+  }
+  .plat-points li b { color: var(--text); font-weight: 500; }
+
+  /* ─── METHOD ─── */
+  #method { border-top: 1px solid var(--line-soft); background: var(--ink-2); }
+  .method-grid { display: grid; grid-template-columns: .82fr 1.18fr; gap: 84px; align-items: start; }
+  .method-sticky { position: sticky; top: 140px; }
+  .quote-card {
+    background: var(--panel); border: 1px solid var(--line);
+    border-radius: 14px; padding: 36px; position: relative; overflow: hidden;
+    margin-top: 34px;
+  }
+  .quote-card::before {
+    content: '\201C'; position: absolute; top: -34px; right: 16px;
+    font-family: var(--serif); font-size: 190px; color: var(--line-soft); line-height: 1;
+  }
+  .quote-card blockquote {
+    font-family: var(--serif); font-style: italic; font-weight: 400;
+    font-size: 19px; line-height: 1.46; color: var(--text);
+    position: relative; margin-bottom: 22px;
+  }
+  .quote-card .by {
+    font-family: var(--mono); font-size: 11px; letter-spacing: .06em;
+    color: var(--text-2); text-transform: uppercase;
+  }
+  .quote-card .by b { color: var(--teal); font-weight: 500; }
+  .steps { display: flex; flex-direction: column; }
+  .step {
+    padding: 34px 0; border-top: 1px solid var(--line);
+    display: grid; grid-template-columns: 64px 1fr; gap: 24px;
+  }
+  .step:last-child { border-bottom: 1px solid var(--line); }
+  .step-n {
+    font-family: var(--serif); font-size: 38px; font-weight: 400;
+    color: var(--line); line-height: 1; letter-spacing: -0.02em; transition: color .3s;
+  }
+  .step:hover .step-n { color: var(--teal); }
+  .step h4 {
+    font-family: var(--serif); font-size: 20px; font-weight: 500;
+    margin-bottom: 8px; letter-spacing: -0.012em;
+  }
+  .step p { font-size: 14px; color: var(--text-2); font-weight: 300; line-height: 1.58; }
+
+  /* ─── STUDIO ─── */
+  #studio { border-top: 1px solid var(--line-soft); }
+  .studio-feature {
+    display: grid; grid-template-columns: 1fr 1.12fr; gap: 54px; align-items: center;
+    margin-bottom: 26px;
+  }
+  .sf-text .sf-kicker { display: flex; align-items: center; gap: 10px; margin-bottom: 16px; }
+  .sf-kicker .badge {
+    font-family: var(--mono); font-size: 10px; letter-spacing: .08em;
+    text-transform: uppercase; padding: 3px 9px; border-radius: 5px;
+  }
+  .badge-live { color: #4ade80; border: 1px solid #2f6f47; background: rgba(74,222,128,.07); }
+  .badge-dev { color: var(--text-2); border: 1px solid var(--line); background: var(--panel-2); }
+  .sf-kicker .lang { font-family: var(--mono); font-size: 11px; color: var(--text-3); }
+  .sf-text h3 {
+    font-family: var(--serif); font-size: 30px; font-weight: 500;
+    letter-spacing: -0.02em; margin-bottom: 12px; line-height: 1.1;
+  }
+  .sf-text > p {
+    font-size: 14.5px; color: var(--text-2); font-weight: 300;
+    line-height: 1.6; margin-bottom: 22px;
+  }
+  .sf-tags { display: flex; gap: 7px; flex-wrap: wrap; margin-bottom: 24px; }
+  .sf-tags span {
+    font-family: var(--mono); font-size: 10.5px; color: var(--text-3);
+    border: 1px solid var(--line); padding: 3px 9px; border-radius: 4px;
+  }
+  .sf-link {
+    font-family: var(--mono); font-size: 12px; color: var(--text);
+    text-decoration: none; display: inline-flex; align-items: center; gap: 8px;
+    border-bottom: 1px solid var(--line); padding-bottom: 4px;
+    transition: color .2s, border-color .2s;
+  }
+  .sf-link:hover { color: var(--teal); border-color: var(--teal-lo); }
+  .studio-feature.flip .sf-text { order: 2; }
+
+  .havyn-card {
+    border: 1px solid var(--line); border-radius: 16px; overflow: hidden;
+    background: #1B1B3A; display: flex; align-items: center; justify-content: center;
+    aspect-ratio: 1 / 1;
+    box-shadow: 0 40px 80px -42px rgba(0,0,0,.85);
+  }
+  .havyn-card img { width: 76%; height: auto; display: block; }
+
+  /* ─── CONTACT ─── */
+  #contact { border-top: 1px solid var(--line-soft); background: var(--ink-2); }
+  .cta { background: var(--bone); color: var(--ink); border-radius: 20px; padding: 76px 62px; position: relative; overflow: hidden; }
+  .cta::before {
+    content: ''; position: absolute; right: -90px; bottom: -130px;
+    width: 400px; height: 400px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(58,163,160,.2), transparent 70%);
+  }
+  .cta-in { position: relative; display: grid; grid-template-columns: 1.15fr 1fr; gap: 58px; align-items: center; }
+  .cta h2 {
+    font-family: var(--serif); font-weight: 400;
+    font-size: clamp(31px, 4vw, 50px); line-height: 1.04; letter-spacing: -0.03em;
+    margin-bottom: 18px;
+  }
+  .cta h2 em { font-style: italic; font-weight: 500; color: var(--teal-lo); }
+  .cta-lead { font-size: 15.5px; color: #4a4d54; font-weight: 300; line-height: 1.58; max-width: 370px; margin-bottom: 28px; }
+  .cta-direct { display: flex; flex-direction: column; gap: 12px; }
+  .cta-direct a, .cta-direct span {
+    font-family: var(--mono); font-size: 13px; color: #2a2c32;
+    text-decoration: none; display: flex; align-items: center; gap: 10px; transition: color .2s;
+  }
+  .cta-direct a:hover { color: var(--teal-lo); }
+  .cta-direct svg { color: var(--teal-lo); flex-shrink: 0; }
+  .cta-card { background: var(--ink); border-radius: 14px; padding: 30px; }
+  .cf { margin-bottom: 15px; }
+  .cf label {
+    font-family: var(--mono); font-size: 10.5px; letter-spacing: .08em;
+    text-transform: uppercase; color: var(--text-3); display: block; margin-bottom: 7px;
+  }
+  .cf input, .cf textarea {
+    width: 100%; background: var(--panel); color: var(--text);
+    border: 1px solid var(--line); border-radius: 8px;
+    padding: 12px 14px; font-family: var(--sans); font-size: 14px;
+    outline: none; transition: border-color .2s;
+  }
+  .cf input:focus, .cf textarea:focus { border-color: var(--teal); }
+  .cf textarea { resize: none; min-height: 76px; }
+  .cta-card button { width: 100%; justify-content: center; margin-top: 4px; }
+
+  /* ─── FOOTER ─── */
+  footer { border-top: 1px solid var(--line-soft); padding: 64px 0 40px; }
+  .foot-grid {
+    display: grid; grid-template-columns: 1.7fr 1fr 1fr 1fr; gap: 44px;
+    padding-bottom: 48px; border-bottom: 1px solid var(--line-soft);
+  }
+  .foot-brand .brand { margin-bottom: 18px; }
+  .foot-brand p { font-size: 13px; color: var(--text-2); font-weight: 300; line-height: 1.6; max-width: 290px; }
+  .foot-col h5 {
+    font-family: var(--mono); font-size: 10.5px; letter-spacing: .1em;
+    text-transform: uppercase; color: var(--text-3); margin-bottom: 16px;
+  }
+  .foot-col a {
+    display: block; text-decoration: none; color: var(--text-2);
+    font-size: 13px; margin-bottom: 11px; font-weight: 300; transition: color .2s;
+  }
+  .foot-col a:hover { color: var(--teal); }
+  .foot-bot {
+    display: flex; justify-content: space-between; align-items: center;
+    padding-top: 28px; flex-wrap: wrap; gap: 14px;
+  }
+  .foot-bot p { font-family: var(--mono); font-size: 11px; color: var(--text-3); }
+
+  /* ─── REVEAL ─── */
+  .reveal { opacity: 0; transform: translateY(28px); transition: opacity .8s cubic-bezier(.2,.7,.2,1), transform .8s cubic-bezier(.2,.7,.2,1); }
+  .reveal.in { opacity: 1; transform: none; }
+
+  /* ─── RESPONSIVE ─── */
+  @media (max-width: 960px) {
+    .method-grid { grid-template-columns: 1fr; gap: 48px; }
+    .method-sticky { position: static; }
+    .studio-feature, .studio-feature.flip { grid-template-columns: 1fr; gap: 30px; }
+    .studio-feature.flip .sf-text { order: 0; }
+    .cta-in { grid-template-columns: 1fr; gap: 36px; }
+    .foot-grid { grid-template-columns: 1fr 1fr; }
+    .svc-grid { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 620px) {
+    .wrap, .nav-in { padding-left: 22px; padding-right: 22px; }
+    .nav-links { display: none; }
+    .burger { display: block; }
+    .hero { padding: 148px 0 82px; }
+    .sec-pad { padding: 84px 0; }
+    .plat-points { grid-template-columns: 1fr; }
+    .plat-points li { border-right: none; }
+    .cta { padding: 50px 26px; }
+    .foot-grid { grid-template-columns: 1fr; gap: 32px; }
+    .step { grid-template-columns: 1fr; gap: 6px; }
+    .havyn-card { aspect-ratio: 16 / 10; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ─── NAV ─── -->
+<nav id="nav">
+  <div class="nav-in">
+    <a href="#" class="brand">
+      <span class="brand-mark">
+        <svg viewBox="0 0 32 32" fill="none">
+          <path d="M16 3 L28 27 L21.5 27 L16 14.5 L10.5 27 L4 27 Z" fill="#e8e8e6"/>
+          <path d="M16 16.5 L19 23 L13 23 Z" fill="#3aa3a0"/>
+        </svg>
+      </span>
+      <span class="brand-txt">Alpha<b>Global</b></span>
+    </a>
+    <div class="nav-links">
+      <a href="#services">What we do</a>
+      <a href="#work">Our work</a>
+      <a href="#method">How we work</a>
+      <a href="#studio">Studio</a>
+      <a href="#contact" class="nav-cta">Start a project</a>
+    </div>
+    <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<!-- ─── HERO ─── -->
+<header class="hero">
+  <div class="hero-grid"></div>
+  <div class="hero-halo"></div>
+  <div class="wrap">
+    <div class="hero-in">
+      <div class="eyebrow reveal">
+        <span class="dot"></span>
+        Alpha Global Tech &amp; Consulting · Lagos, Nigeria
+      </div>
+      <h1 class="reveal" style="transition-delay:.08s">
+        We engineer what<br>your business <em>runs on</em>.
+      </h1>
+      <p class="hero-sub reveal" style="transition-delay:.16s">
+        Software, automation, and systems, built to hold up.
+        We take on the work that has to be right.
+      </p>
+      <div class="hero-actions reveal" style="transition-delay:.24s">
+        <a href="#work" class="btn btn-pri">
+          See our work
+          <svg width="15" height="15" viewBox="0 0 16 16" fill="none"><path d="M3 8h9M8.5 3.5 13 8l-4.5 4.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a href="#contact" class="btn btn-ghost">Start a project</a>
+      </div>
+
+      <div class="caprow reveal" style="transition-delay:.32s">
+        <span>Build</span>
+        <span class="sep"></span>
+        <span>Automate</span>
+        <span class="sep"></span>
+        <span>Architect</span>
+        <span class="sep"></span>
+        <span>Advise</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ─── WHAT WE DO ─── -->
+<section id="services" class="sec-pad">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-tag">What we do</div>
+      <h2 class="sec-title">An engineering firm, <em>not a category</em>.</h2>
+      <p class="sec-desc">
+        We are not tied to one industry or one kind of system. The common
+        thread is how we work, not what we build.
+      </p>
+    </div>
+
+    <div class="svc-grid reveal">
+      <div class="svc">
+        <div class="svc-num">01</div>
+        <h3>Custom software</h3>
+        <p>Web and mobile applications, internal tools, full platforms. Modern
+          stacks, built to be maintained, not just shipped.</p>
+      </div>
+      <div class="svc">
+        <div class="svc-num">02</div>
+        <h3>Process automation</h3>
+        <p>Workflows, batch jobs, integrations. We find the manual work that
+          drains a team and replace it with something that runs itself.</p>
+      </div>
+      <div class="svc">
+        <div class="svc-num">03</div>
+        <h3>Enterprise architecture</h3>
+        <p>Systems that talk to each other. Middleware, message queues,
+          file and API integration, with the failure cases handled.</p>
+      </div>
+      <div class="svc">
+        <div class="svc-num">04</div>
+        <h3>Technology consulting</h3>
+        <p>A second opinion that knows the code. We help teams choose well,
+          scope honestly, and avoid expensive mistakes.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── OUR WORK ─── -->
+<section id="work" class="sec-pad">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-tag">Our work</div>
+      <h2 class="sec-title">Built to prove the <em>standard</em>.</h2>
+      <p class="sec-desc">
+        Two of our own platforms, engineered for one of the least forgiving
+        environments there is. Financial messaging. Public architecture
+        previews are open on GitHub.
+      </p>
+    </div>
+
+    <article class="plat plat-tall reveal">
+      <div class="plat-head">
+        <div class="plat-id">
+          <div class="plat-kicker">
+            <span class="badge">Our platform</span>
+            <span class="lang">Java 17 · Spring Boot 3</span>
+          </div>
+          <h3>ISO 20022 Converter</h3>
+          <p>
+            A SWIFT MT to ISO 20022 MX message converter, both directions.
+            It translates the formats banks have run for decades into the
+            standard their counterparties now expect.
+          </p>
+        </div>
+        <a href="https://github.com/aboladelawal/iso20022-converter" class="plat-link" target="_blank" rel="noopener">
+          Architecture on GitHub
+          <svg width="13" height="13" viewBox="0 0 16 16" fill="none"><path d="M5 11 11 5M6 5h5v5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+      <div class="frame">
+        <div class="frame-bar">
+          <span class="fdot"></span><span class="fdot"></span><span class="fdot"></span>
+          <span class="url">alpha-converter · operations console</span>
+        </div>
+        <img class="frame-shot" src="images/converter.jpg" alt="Alpha Converter operations console">
+      </div>
+      <ul class="plat-points">
+        <li><b>Message coverage</b> · MT103, MT202, MT940 and more</li>
+        <li><b>Mapped to MX</b> · pacs.008, pacs.009, camt.053, camt.054</li>
+        <li><b>Header generation</b> · Business Application Header, SAA envelope</li>
+        <li><b>Audited</b> · full trail, reprocess, encrypted credentials</li>
+      </ul>
+    </article>
+
+    <article class="plat plat-tall reveal">
+      <div class="plat-head">
+        <div class="plat-id">
+          <div class="plat-kicker">
+            <span class="badge">Our platform</span>
+            <span class="lang">Java 17 · Spring Boot 3</span>
+          </div>
+          <h3>SFTP &mdash; MQ Bridge</h3>
+          <p>
+            Integration middleware that moves files between SFTP and IBM MQ,
+            both directions. For the common case where partners send files
+            but internal systems read from queues.
+          </p>
+        </div>
+        <a href="https://github.com/aboladelawal/sftp-mq-bridge" class="plat-link" target="_blank" rel="noopener">
+          Architecture on GitHub
+          <svg width="13" height="13" viewBox="0 0 16 16" fill="none"><path d="M5 11 11 5M6 5h5v5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+      <div class="frame">
+        <div class="frame-bar">
+          <span class="fdot"></span><span class="fdot"></span><span class="fdot"></span>
+          <span class="url">alpha-bridge · operations console</span>
+        </div>
+        <img class="frame-shot" src="images/bridge.jpg" alt="Alpha Bridge operations console">
+      </div>
+      <ul class="plat-points">
+        <li><b>Outbound</b> · polls SFTP, publishes to a target queue</li>
+        <li><b>Inbound</b> · listens on MQ, writes files back to SFTP</li>
+        <li><b>Routing</b> · success, error, unsupported, with a replay archive</li>
+        <li><b>Resilient</b> · retries, dead-letter queue, health checks</li>
+      </ul>
+    </article>
+  </div>
+</section>
+
+<!-- ─── METHOD ─── -->
+<section id="method" class="sec-pad">
+  <div class="wrap">
+    <div class="method-grid">
+      <div class="method-sticky reveal">
+        <div class="sec-tag">How we work</div>
+        <h2 class="sec-title">The part that <em>doesn't change</em>.</h2>
+        <p class="sec-desc">
+          Whatever we build, the discipline underneath is the same. It is the
+          reason the work holds up.
+        </p>
+        <div class="quote-card">
+          <blockquote>
+            We would rather ship one system that holds under load than ten
+            demos that impress in a meeting.
+          </blockquote>
+          <div class="by">&mdash; <b>Alpha Global engineering</b></div>
+        </div>
+      </div>
+
+      <div class="steps reveal" style="transition-delay:.1s">
+        <div class="step">
+          <div class="step-n">01</div>
+          <div>
+            <h4>Read the system first</h4>
+            <p>We start in the code and the constraints as they actually are.
+              No theorising before the facts are in.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-n">02</div>
+          <div>
+            <h4>Design for what fails</h4>
+            <p>Retries, idempotency, reconciliation. We assume things break,
+              and build so that nothing important breaks with them.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-n">03</div>
+          <div>
+            <h4>Keep config out of code</h4>
+            <p>Endpoints, rules, rates all live outside the code. The same system adapts
+              to a new case without a rebuild.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-n">04</div>
+          <div>
+            <h4>Hand over something owned</h4>
+            <p>Documented, deployable, auditable. We leave a system your team
+              can run without us.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── STUDIO ─── -->
+<section id="studio" class="sec-pad">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-tag">Alpha Global Studio</div>
+      <h2 class="sec-title">We build our own <em>products</em>, too.</h2>
+      <p class="sec-desc">
+        Not every brief comes from a client. These are ours, built to the
+        same standard, shipped to a real audience.
+      </p>
+    </div>
+
+    <div class="studio-feature reveal">
+      <div class="sf-text">
+        <div class="sf-kicker">
+          <span class="badge badge-live">Live</span>
+          <span class="lang">Next.js · Supabase · Paystack</span>
+        </div>
+        <h3>Picki</h3>
+        <p>
+          A commerce platform for Nigerian businesses. One link becomes a full
+          storefront, with an AI shopping assistant, flexible payments, and
+          delivery built in. Live and trading today.
+        </p>
+        <div class="sf-tags">
+          <span>Storefronts</span><span>AI checkout</span><span>Payments</span><span>Delivery</span>
+        </div>
+        <a href="https://picki.store" class="sf-link" target="_blank" rel="noopener">
+          Visit picki.store
+          <svg width="13" height="13" viewBox="0 0 16 16" fill="none"><path d="M5 11 11 5M6 5h5v5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+      <div class="frame">
+        <div class="frame-bar">
+          <span class="fdot"></span><span class="fdot"></span><span class="fdot"></span>
+          <span class="url">picki.store</span>
+        </div>
+        <img class="frame-shot" src="images/picki-home.jpg" alt="Picki commerce platform homepage">
+      </div>
+    </div>
+
+    <div class="studio-feature flip reveal">
+      <div class="sf-text">
+        <div class="sf-kicker">
+          <span class="badge badge-dev">In development</span>
+          <span class="lang">Next.js · Supabase</span>
+        </div>
+        <h3>Havyn</h3>
+        <p>
+          A child check-in platform for churches, schools and daycares. A
+          parent checks a child in, a verified code and QR govern release, a
+          worker confirms the match. Built for accountability.
+        </p>
+        <div class="sf-tags">
+          <span>Multi-tenant</span><span>QR verification</span><span>Custody delegation</span>
+        </div>
+        <span class="sf-link" style="cursor:default;border-color:var(--line-soft);color:var(--text-3)">
+          Launching soon
+        </span>
+      </div>
+      <div class="havyn-card">
+        <img src="images/havyn.png" alt="Havyn — coming soon">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── CONTACT ─── -->
+<section id="contact" class="sec-pad">
+  <div class="wrap">
+    <div class="cta reveal">
+      <div class="cta-in">
+        <div>
+          <h2>Got something that <em>needs building</em>?</h2>
+          <p class="cta-lead">
+            Tell us what you have in mind. We reply to every serious enquiry
+            within two working days.
+          </p>
+          <div class="cta-direct">
+            <a href="mailto:info@agtconsults.com">
+              <svg width="15" height="15" viewBox="0 0 16 16" fill="none"><path d="M2 4h12v8H2zM2 4l6 5 6-5" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/></svg>
+              info@agtconsults.com
+            </a>
+            <a href="tel:+2349131356543">
+              <svg width="15" height="15" viewBox="0 0 16 16" fill="none"><path d="M3 3c0 6 4 10 10 10l1-3-3-1-1 1c-2-1-3-2-4-4l1-1-1-3z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/></svg>
+              +234 913 135 6543
+            </a>
+            <span>
+              <svg width="15" height="15" viewBox="0 0 16 16" fill="none"><path d="M8 1c3 0 5 2 5 5 0 4-5 9-5 9S3 10 3 6c0-3 2-5 5-5z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/><circle cx="8" cy="6" r="1.6" stroke="currentColor" stroke-width="1.3"/></svg>
+              Lagos, Nigeria
+            </span>
+          </div>
+        </div>
+        <div class="cta-card">
+          <form id="ctaForm">
+            <div class="cf">
+              <label for="cf-name">Name</label>
+              <input id="cf-name" type="text" placeholder="Your name" required>
+            </div>
+            <div class="cf">
+              <label for="cf-email">Email</label>
+              <input id="cf-email" type="email" placeholder="you@company.com" required>
+            </div>
+            <div class="cf">
+              <label for="cf-msg">Project</label>
+              <textarea id="cf-msg" placeholder="A sentence on what you need." required></textarea>
+            </div>
+            <button type="submit" class="btn btn-pri" id="cf-btn">
+              Send enquiry
+              <svg width="15" height="15" viewBox="0 0 16 16" fill="none"><path d="M3 8h9M8.5 3.5 13 8l-4.5 4.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── FOOTER ─── -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a href="#" class="brand">
+          <span class="brand-mark">
+            <svg viewBox="0 0 32 32" fill="none">
+              <path d="M16 3 L28 27 L21.5 27 L16 14.5 L10.5 27 L4 27 Z" fill="#e8e8e6"/>
+              <path d="M16 16.5 L19 23 L13 23 Z" fill="#3aa3a0"/>
+            </svg>
+          </span>
+          <span class="brand-txt">Alpha<b>Global</b></span>
+        </a>
+        <p>An engineering and consulting firm. We build the software, systems,
+          and automation a business runs on.</p>
+      </div>
+      <div class="foot-col">
+        <h5>Company</h5>
+        <a href="#services">What we do</a>
+        <a href="#work">Our work</a>
+        <a href="#method">How we work</a>
+        <a href="#studio">Studio</a>
+      </div>
+      <div class="foot-col">
+        <h5>Work</h5>
+        <a href="https://github.com/aboladelawal/iso20022-converter" target="_blank" rel="noopener">ISO 20022 Converter</a>
+        <a href="https://github.com/aboladelawal/sftp-mq-bridge" target="_blank" rel="noopener">SFTP-MQ Bridge</a>
+        <a href="https://picki.store" target="_blank" rel="noopener">Picki</a>
+      </div>
+      <div class="foot-col">
+        <h5>Contact</h5>
+        <a href="mailto:info@agtconsults.com">info@agtconsults.com</a>
+        <a href="tel:+2349131356543">+234 913 135 6543</a>
+        <a href="#contact">Start a project</a>
+      </div>
+    </div>
+    <div class="foot-bot">
+      <p>© 2026 Alpha Global Tech &amp; Consulting</p>
+      <p>Growth · Competency · Probity</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 24));
+
+  const io = new IntersectionObserver((es) => {
+    es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', function(e) {
+      const href = this.getAttribute('href');
+      if (href === '#') { e.preventDefault(); return; }
+      const t = document.querySelector(href);
+      if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth' }); }
+    });
+  });
+
+  document.getElementById('ctaForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const b = document.getElementById('cf-btn');
+    b.innerHTML = 'Enquiry sent \u2713';
+    b.style.background = '#3aa3a0';
+  });
+
+  document.getElementById('burger').addEventListener('click', () => {
+    const l = document.querySelector('.nav-links');
+    const open = l.style.display === 'flex';
+    if (open) { l.removeAttribute('style'); }
+    else { l.style.cssText = 'display:flex;position:absolute;top:66px;right:22px;flex-direction:column;background:#151922;border:1px solid #262c36;padding:22px 28px;border-radius:12px;gap:18px;'; }
+  });
+</script>
+</body>
+</html>
