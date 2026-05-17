@@ -428,17 +428,39 @@
     .svc-grid { grid-template-columns: 1fr; }
   }
   @media (max-width: 620px) {
-    .wrap, .nav-in { padding-left: 22px; padding-right: 22px; }
+    .wrap, .nav-in { padding-left: 20px; padding-right: 20px; }
     .nav-links { display: none; }
     .burger { display: block; }
-    .hero { padding: 148px 0 82px; }
-    .sec-pad { padding: 84px 0; }
+    .nav-in { padding-top: 18px; padding-bottom: 18px; }
+    .hero { padding: 134px 0 72px; }
+    .hero h1 { font-size: clamp(36px, 9vw, 52px); }
+    .hero h1 br { display: none; }
+    .hero-sub { font-size: 16px; margin-bottom: 36px; }
+    .hero-actions { width: 100%; }
+    .hero-actions .btn { flex: 1; justify-content: center; }
+    .caprow { margin-top: 48px; gap: 14px; }
+    .caprow span:not(.sep) { font-size: 11px; }
+    .sec-pad { padding: 78px 0; }
+    .sec-head { margin-bottom: 44px; }
+    .plat { margin-bottom: 68px; }
+    .plat-head { margin-bottom: 22px; }
+    .plat-id h3, .sf-text h3 { font-size: 25px; }
     .plat-points { grid-template-columns: 1fr; }
     .plat-points li { border-right: none; }
-    .cta { padding: 50px 26px; }
+    /* show full dashboard, not a tiny cropped sliver */
+    .plat-tall .frame-shot { max-height: none; object-fit: contain; }
+    .frame-bar { padding: 10px 13px; }
+    .frame-bar .url { font-size: 10px; margin-left: 10px; }
+    .studio-feature, .studio-feature.flip { gap: 26px; }
+    .cta { padding: 46px 24px; }
+    .cta-card { padding: 26px; }
     .foot-grid { grid-template-columns: 1fr; gap: 32px; }
+    .foot-bot { flex-direction: column; align-items: flex-start; gap: 8px; }
     .step { grid-template-columns: 1fr; gap: 6px; }
-    .havyn-card { aspect-ratio: 16 / 10; }
+    .step-n { font-size: 32px; }
+    .havyn-card { aspect-ratio: 4 / 3; }
+    .quote-card { padding: 30px; }
+    .quote-card blockquote { font-size: 17px; }
   }
 </style>
 </head>
