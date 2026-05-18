@@ -11,6 +11,14 @@
 <meta property="og:title" content="Alpha Global Tech &amp; Consulting">
 <meta property="og:description" content="We engineer what your business runs on. Software, automation, and enterprise systems, built to hold up.">
 <meta property="og:type" content="website">
+<meta property="og:url" content="https://agtconsults.com">
+<meta property="og:image" content="https://agtconsults.com/images/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Alpha Global Tech &amp; Consulting">
+<meta name="twitter:description" content="We engineer what your business runs on.">
+<meta name="twitter:image" content="https://agtconsults.com/images/og-image.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -454,6 +462,36 @@
   }
   .team-card:hover .team-more { color: var(--teal); gap: 12px; }
 
+  /* ─── FAQ ─── */
+  #faq { border-top: 1px solid var(--line-soft); }
+  .faq-grid { display: grid; grid-template-columns: .8fr 1.2fr; gap: 72px; align-items: start; }
+  .faq-head { position: sticky; top: 130px; }
+  .faq-list { border-top: 1px solid var(--line); }
+  .faq-item { border-bottom: 1px solid var(--line); }
+  .faq-item summary {
+    list-style: none; cursor: pointer;
+    padding: 24px 4px; display: flex; align-items: center; justify-content: space-between;
+    gap: 20px; font-family: var(--serif); font-size: 18px; font-weight: 500;
+    color: var(--text); letter-spacing: -0.01em;
+    transition: color .2s;
+  }
+  .faq-item summary::-webkit-details-marker { display: none; }
+  .faq-item summary:hover { color: var(--teal); }
+  .faq-mark {
+    position: relative; width: 13px; height: 13px; flex-shrink: 0;
+  }
+  .faq-mark::before, .faq-mark::after {
+    content: ''; position: absolute; background: var(--teal);
+    transition: transform .25s;
+  }
+  .faq-mark::before { left: 0; top: 6px; width: 13px; height: 1.5px; }
+  .faq-mark::after { left: 6px; top: 0; width: 1.5px; height: 13px; }
+  .faq-item[open] .faq-mark::after { transform: scaleY(0); }
+  .faq-item p {
+    font-size: 14.5px; color: var(--text-2); font-weight: 300;
+    line-height: 1.65; padding: 0 4px 26px; max-width: 620px;
+  }
+
   /* ─── CONTACT ─── */
   #contact { border-top: 1px solid var(--line-soft); background: var(--ink-2); }
   .cta { background: var(--bone); color: var(--ink); border-radius: 20px; padding: 76px 62px; position: relative; overflow: hidden; }
@@ -532,6 +570,8 @@
     .foot-grid { grid-template-columns: 1fr 1fr; }
     .svc-grid { grid-template-columns: 1fr; }
     .team-grid { grid-template-columns: 1fr 1fr; }
+    .faq-grid { grid-template-columns: 1fr; gap: 36px; }
+    .faq-head { position: static; }
   }
   @media (max-width: 620px) {
     .wrap, .nav-in { padding-left: 20px; padding-right: 20px; }
@@ -934,6 +974,82 @@
   </div>
 </section>
 
+<!-- ─── FAQ ─── -->
+<section id="faq" class="sec-pad">
+  <div class="wrap">
+    <div class="faq-grid">
+      <div class="faq-head reveal">
+        <div class="sec-tag">How we engage</div>
+        <h2 class="sec-title">Questions worth <em>asking first</em>.</h2>
+        <p class="sec-desc">
+          A few honest answers before you reach out.
+        </p>
+      </div>
+      <div class="faq-list reveal" style="transition-delay:.1s">
+        <details class="faq-item">
+          <summary>
+            How does a project start?
+            <span class="faq-mark"></span>
+          </summary>
+          <p>
+            With a conversation. You tell us what you need, we scope it
+            honestly, and we agree on what good looks like before any code is
+            written. Most engagements begin with a short paid discovery so the
+            estimate is real, not a guess.
+          </p>
+        </details>
+        <details class="faq-item">
+          <summary>
+            Do you take small projects, or only large builds?
+            <span class="faq-mark"></span>
+          </summary>
+          <p>
+            Both. We have built full platforms and we have fixed a single
+            broken integration. What matters is whether the work is a fit for
+            how we work, not its size. If it is not a fit, we will say so.
+          </p>
+        </details>
+        <details class="faq-item">
+          <summary>
+            How does licensing work for your banking platforms?
+            <span class="faq-mark"></span>
+          </summary>
+          <p>
+            The ISO 20022 Converter and SFTP-MQ Bridge are licensed for
+            deployment in your environment. The public GitHub repositories are
+            architecture previews. The full implementation, support, and
+            configuration are provided under a commercial license. Talk to us
+            about scope and tiers.
+          </p>
+        </details>
+        <details class="faq-item">
+          <summary>
+            Do you work remotely, or only in Lagos?
+            <span class="faq-mark"></span>
+          </summary>
+          <p>
+            We are based in Lagos and work with clients wherever they are.
+            Engineering work is delivered remotely. For banking deployments
+            that need on-site presence, we plan that into the engagement.
+          </p>
+        </details>
+        <details class="faq-item">
+          <summary>
+            What does it cost?
+            <span class="faq-mark"></span>
+          </summary>
+          <p>
+            It depends on the work, so we do not publish fixed prices. We
+            quote per project after discovery, and for longer engagements we
+            offer a monthly retainer. You will always know the number before
+            we start.
+          </p>
+        </details>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ─── CONTACT ─── -->
 <section id="contact" class="sec-pad">
   <div class="wrap">
@@ -961,18 +1077,20 @@
           </div>
         </div>
         <div class="cta-card">
-          <form id="ctaForm">
+          <form id="ctaForm" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+            <input type="hidden" name="form-name" value="contact">
+            <p style="display:none"><label>Leave empty: <input name="bot-field"></label></p>
             <div class="cf">
               <label for="cf-name">Name</label>
-              <input id="cf-name" type="text" placeholder="Your name" required>
+              <input id="cf-name" name="name" type="text" placeholder="Your name" required>
             </div>
             <div class="cf">
               <label for="cf-email">Email</label>
-              <input id="cf-email" type="email" placeholder="you@company.com" required>
+              <input id="cf-email" name="email" type="email" placeholder="you@company.com" required>
             </div>
             <div class="cf">
               <label for="cf-msg">Project</label>
-              <textarea id="cf-msg" placeholder="A sentence on what you need." required></textarea>
+              <textarea id="cf-msg" name="project" placeholder="A sentence on what you need." required></textarea>
             </div>
             <button type="submit" class="btn btn-pri" id="cf-btn">
               Send enquiry
@@ -1002,7 +1120,7 @@
         <a href="#work">Our work</a>
         <a href="#flagship">Picki</a>
         <a href="#team">Team</a>
-        <a href="#method">How we work</a>
+        <a href="#faq">How we engage</a>
       </div>
       <div class="foot-col">
         <h5>Work</h5>
@@ -1044,9 +1162,25 @@
 
   document.getElementById('ctaForm').addEventListener('submit', function(e) {
     e.preventDefault();
+    const form = e.target;
     const b = document.getElementById('cf-btn');
-    b.innerHTML = 'Enquiry sent \u2713';
-    b.style.background = '#3aa3a0';
+    b.disabled = true;
+    b.innerHTML = 'Sending\u2026';
+    fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: new URLSearchParams(new FormData(form)).toString()
+    })
+    .then(() => {
+      b.innerHTML = 'Enquiry sent \u2713';
+      b.style.background = '#3aa3a0';
+      form.reset();
+    })
+    .catch(() => {
+      b.disabled = false;
+      b.innerHTML = 'Try again';
+      b.style.background = '#c0584e';
+    });
   });
 
   document.getElementById('burger').addEventListener('click', () => {
