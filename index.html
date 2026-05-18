@@ -163,6 +163,68 @@
   }
   .caprow .sep { width: 4px; height: 4px; border-radius: 50%; background: var(--teal-lo); }
 
+  /* ─── PICKI FLAGSHIP ─── */
+  #flagship { border-top: 1px solid var(--line-soft); background: var(--ink-2); }
+  .flagship {
+    padding: 88px 0;
+    display: grid; grid-template-columns: .92fr 1.08fr; gap: 64px;
+    align-items: center;
+  }
+  .flagship-kicker {
+    display: inline-flex; align-items: center; gap: 9px;
+    font-family: var(--mono); font-size: 11px; letter-spacing: .12em;
+    text-transform: uppercase; color: #16a34a; margin-bottom: 22px;
+  }
+  .flagship-kicker .fk-dot {
+    width: 6px; height: 6px; border-radius: 50%; background: #16a34a;
+    box-shadow: 0 0 0 0 rgba(22,163,74,.5); animation: pulse-g 3s infinite;
+  }
+  @keyframes pulse-g {
+    0% { box-shadow: 0 0 0 0 rgba(22,163,74,.5); }
+    70% { box-shadow: 0 0 0 8px rgba(22,163,74,0); }
+    100% { box-shadow: 0 0 0 0 rgba(22,163,74,0); }
+  }
+  .flagship-text h2 {
+    font-family: var(--serif); font-size: clamp(40px, 4.6vw, 58px);
+    font-weight: 500; letter-spacing: -0.028em; line-height: 1; margin-bottom: 18px;
+  }
+  .flagship-lead {
+    font-size: 17px; color: var(--text); font-weight: 300;
+    line-height: 1.55; margin-bottom: 14px;
+  }
+  .flagship-body {
+    font-size: 14.5px; color: var(--text-2); font-weight: 300;
+    line-height: 1.6; margin-bottom: 28px;
+  }
+  .flagship-meta {
+    display: flex; gap: 0; margin-bottom: 30px;
+    border-top: 1px solid var(--line);
+  }
+  .fm-item {
+    padding: 18px 28px 0 0; display: flex; flex-direction: column; gap: 5px;
+  }
+  .fm-item + .fm-item { padding-left: 28px; border-left: 1px solid var(--line); }
+  .fm-k {
+    font-family: var(--mono); font-size: 10px; letter-spacing: .1em;
+    text-transform: uppercase; color: var(--text-3);
+  }
+  .fm-v { font-size: 13.5px; color: var(--text); font-weight: 400; }
+  .flagship-cta {
+    display: inline-flex; align-items: center; gap: 9px;
+    font-family: var(--sans); font-size: 14px; font-weight: 500;
+    text-decoration: none; color: var(--ink); background: #16a34a;
+    padding: 13px 24px; border-radius: 8px;
+    transition: transform .2s, box-shadow .2s, background .2s;
+  }
+  .flagship-cta:hover {
+    transform: translateY(-2px); background: #15b350;
+    box-shadow: 0 14px 30px -10px rgba(22,163,74,.45);
+  }
+  .flagship-cta svg { transition: transform .25s; }
+  .flagship-cta:hover svg { transform: translateX(3px); }
+  .frame-picki { box-shadow: 0 40px 90px -40px rgba(22,163,74,.28), 0 30px 60px -38px rgba(0,0,0,.8); }
+  .url-picki { color: #16a34a !important; }
+
   /* ─── SECTION SCAFFOLD ─── */
   .sec-pad { padding: 124px 0; }
   .sec-head { max-width: 660px; margin-bottom: 60px; }
@@ -423,6 +485,8 @@
     .method-sticky { position: static; }
     .studio-feature, .studio-feature.flip { grid-template-columns: 1fr; gap: 30px; }
     .studio-feature.flip .sf-text { order: 0; }
+    .flagship { grid-template-columns: 1fr; gap: 40px; }
+    .flagship-visual { order: 2; }
     .cta-in { grid-template-columns: 1fr; gap: 36px; }
     .foot-grid { grid-template-columns: 1fr 1fr; }
     .svc-grid { grid-template-columns: 1fr; }
@@ -452,6 +516,11 @@
     .frame-bar { padding: 10px 13px; }
     .frame-bar .url { font-size: 10px; margin-left: 10px; }
     .studio-feature, .studio-feature.flip { gap: 26px; }
+    .flagship { padding: 64px 0; gap: 32px; }
+    .flagship-text h2 { font-size: clamp(38px, 11vw, 50px); }
+    .flagship-meta { flex-wrap: wrap; }
+    .fm-item { padding-right: 20px; }
+    .fm-item + .fm-item { padding-left: 20px; }
     .cta { padding: 46px 24px; }
     .cta-card { padding: 26px; }
     .foot-grid { grid-template-columns: 1fr; gap: 32px; }
@@ -481,8 +550,8 @@
     <div class="nav-links">
       <a href="#services">What we do</a>
       <a href="#work">Our work</a>
+      <a href="#flagship">Picki</a>
       <a href="#method">How we work</a>
-      <a href="#studio">Studio</a>
       <a href="#contact" class="nav-cta">Start a project</a>
     </div>
     <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
@@ -526,6 +595,52 @@
     </div>
   </div>
 </header>
+
+<!-- ─── PICKI FLAGSHIP ─── -->
+<section id="flagship">
+  <div class="wrap">
+    <div class="flagship reveal">
+      <div class="flagship-text">
+        <div class="flagship-kicker">
+          <span class="fk-dot"></span>
+          Flagship product · Live
+        </div>
+        <h2>Picki</h2>
+        <p class="flagship-lead">
+          Our first product, and proof of what AGT ships. A commerce platform
+          for Nigerian businesses, where one link becomes a full storefront.
+        </p>
+        <p class="flagship-body">
+          AI shopping assistant, flexible payments, delivery built in. Live in
+          market today and trading with real vendors across the country.
+        </p>
+        <div class="flagship-meta">
+          <div class="fm-item">
+            <span class="fm-k">Status</span>
+            <span class="fm-v">Live · in market</span>
+          </div>
+          <div class="fm-item">
+            <span class="fm-k">Stack</span>
+            <span class="fm-v">Next.js · Supabase · Paystack</span>
+          </div>
+        </div>
+        <a href="https://picki.store" class="flagship-cta" target="_blank" rel="noopener">
+          Visit picki.store
+          <svg width="15" height="15" viewBox="0 0 16 16" fill="none"><path d="M5 11 11 5M6 5h5v5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+      <div class="flagship-visual">
+        <div class="frame frame-picki">
+          <div class="frame-bar">
+            <span class="fdot"></span><span class="fdot"></span><span class="fdot"></span>
+            <span class="url url-picki">picki.store</span>
+          </div>
+          <img class="frame-shot" src="images/picki-home.jpg" alt="Picki commerce platform homepage">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- ─── WHAT WE DO ─── -->
 <section id="services" class="sec-pad">
@@ -713,44 +828,15 @@
 <section id="studio" class="sec-pad">
   <div class="wrap">
     <div class="sec-head reveal">
-      <div class="sec-tag">Alpha Global Studio</div>
-      <h2 class="sec-title">We build our own <em>products</em>, too.</h2>
+      <div class="sec-tag">Also in the studio</div>
+      <h2 class="sec-title">Next out of the <em>studio</em>.</h2>
       <p class="sec-desc">
-        Not every brief comes from a client. These are ours, built to the
-        same standard, shipped to a real audience.
+        Picki was the first. Havyn is the next product we are building for
+        ourselves, currently in active development.
       </p>
     </div>
 
     <div class="studio-feature reveal">
-      <div class="sf-text">
-        <div class="sf-kicker">
-          <span class="badge badge-live">Live</span>
-          <span class="lang">Next.js · Supabase · Paystack</span>
-        </div>
-        <h3>Picki</h3>
-        <p>
-          A commerce platform for Nigerian businesses. One link becomes a full
-          storefront, with an AI shopping assistant, flexible payments, and
-          delivery built in. Live and trading today.
-        </p>
-        <div class="sf-tags">
-          <span>Storefronts</span><span>AI checkout</span><span>Payments</span><span>Delivery</span>
-        </div>
-        <a href="https://picki.store" class="sf-link" target="_blank" rel="noopener">
-          Visit picki.store
-          <svg width="13" height="13" viewBox="0 0 16 16" fill="none"><path d="M5 11 11 5M6 5h5v5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </a>
-      </div>
-      <div class="frame">
-        <div class="frame-bar">
-          <span class="fdot"></span><span class="fdot"></span><span class="fdot"></span>
-          <span class="url">picki.store</span>
-        </div>
-        <img class="frame-shot" src="images/picki-home.jpg" alt="Picki commerce platform homepage">
-      </div>
-    </div>
-
-    <div class="studio-feature flip reveal">
       <div class="sf-text">
         <div class="sf-kicker">
           <span class="badge badge-dev">In development</span>
@@ -770,7 +856,7 @@
         </span>
       </div>
       <div class="havyn-card">
-        <img src="images/havyn.png" alt="Havyn — coming soon">
+        <img src="images/havyn.png" alt="Havyn, coming soon">
       </div>
     </div>
   </div>
@@ -848,6 +934,7 @@
         <h5>Company</h5>
         <a href="#services">What we do</a>
         <a href="#work">Our work</a>
+        <a href="#flagship">Picki</a>
         <a href="#method">How we work</a>
         <a href="#studio">Studio</a>
       </div>
