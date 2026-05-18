@@ -529,6 +529,7 @@
   }
   .cf input:focus, .cf textarea:focus { border-color: var(--teal); }
   .cf textarea { resize: none; min-height: 76px; }
+  .hp-field { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
   .cta-card button { width: 100%; justify-content: center; margin-top: 4px; }
 
   /* ─── FOOTER ─── */
@@ -1058,8 +1059,8 @@
         <div>
           <h2>Got something that <em>needs building</em>?</h2>
           <p class="cta-lead">
-            Tell us what you have in mind. We reply to every serious enquiry
-            within two working days.
+            Tell us what you have in mind. We reply within
+            two working days, usually sooner.
           </p>
           <div class="cta-direct">
             <a href="mailto:info@agtconsults.com">
@@ -1077,9 +1078,9 @@
           </div>
         </div>
         <div class="cta-card">
-          <form id="ctaForm" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+          <form id="ctaForm" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thank-you.html">
             <input type="hidden" name="form-name" value="contact">
-            <p style="display:none"><label>Leave empty: <input name="bot-field"></label></p>
+            <p class="hp-field"><label>Leave empty: <input name="bot-field"></label></p>
             <div class="cf">
               <label for="cf-name">Name</label>
               <input id="cf-name" name="name" type="text" placeholder="Your name" required>
@@ -1160,27 +1161,10 @@
     });
   });
 
-  document.getElementById('ctaForm').addEventListener('submit', function(e) {
-    e.preventDefault();
-    const form = e.target;
+  document.getElementById('ctaForm').addEventListener('submit', function() {
     const b = document.getElementById('cf-btn');
     b.disabled = true;
     b.innerHTML = 'Sending\u2026';
-    fetch('/', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: new URLSearchParams(new FormData(form)).toString()
-    })
-    .then(() => {
-      b.innerHTML = 'Enquiry sent \u2713';
-      b.style.background = '#3aa3a0';
-      form.reset();
-    })
-    .catch(() => {
-      b.disabled = false;
-      b.innerHTML = 'Try again';
-      b.style.background = '#c0584e';
-    });
   });
 
   document.getElementById('burger').addEventListener('click', () => {
