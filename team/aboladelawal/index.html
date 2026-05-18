@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aliu Bolade Lawal — Managing Partner &amp; Chief Product Engineer, Alpha Global Tech</title>
+<meta name="description" content="Aliu Bolade Lawal is the founder of Alpha Global Tech & Consulting. A senior software engineer with 8+ years building production banking, payment, and fintech systems in Nigeria.">
+<link rel="icon" type="image/png" href="../../images/icon.png">
+<link rel="apple-touch-icon" href="../../images/icon.png">
+<meta property="og:title" content="Aliu Bolade Lawal — Alpha Global Tech">
+<meta property="og:description" content="Managing Partner & Chief Product Engineer. 8+ years building production banking and fintech systems.">
+<meta property="og:type" content="profile">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #0c0e12;
+    --ink-2: #101319;
+    --panel: #151922;
+    --panel-2: #1c2029;
+    --line: #262c36;
+    --line-soft: #1d222c;
+    --bone: #f3f2ee;
+    --text: #e8e8e6;
+    --text-2: #8e93a0;
+    --text-3: #585f6b;
+    --teal: #3aa3a0;
+    --teal-lo: #2b6f6e;
+    --teal-wash: rgba(58,163,160,0.08);
+    --serif: 'Fraunces', Georgia, serif;
+    --sans: 'Inter', system-ui, sans-serif;
+    --mono: 'IBM Plex Mono', monospace;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  ::selection { background: var(--teal); color: var(--ink); }
+
+  body {
+    font-family: var(--sans);
+    background: var(--ink);
+    color: var(--text);
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.5;
+    letter-spacing: -0.005em;
+  }
+  body::after {
+    content: '';
+    position: fixed; inset: 0; pointer-events: none; z-index: 9999;
+    opacity: 0.022;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  .wrap { max-width: 1100px; margin: 0 auto; padding: 0 38px; }
+
+  /* ─── NAV ─── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+    background: rgba(12,14,18,.8);
+    backdrop-filter: blur(18px) saturate(1.3);
+    border-bottom: 1px solid var(--line-soft);
+  }
+  .nav-in {
+    max-width: 1100px; margin: 0 auto; padding: 20px 38px;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .brand { display: inline-flex; align-items: center; text-decoration: none; }
+  .brand-logo { height: 26px; width: auto; display: block; }
+  .nav-back {
+    font-family: var(--mono); font-size: 12px; color: var(--text-2);
+    text-decoration: none; display: inline-flex; align-items: center; gap: 8px;
+    transition: color .2s;
+  }
+  .nav-back:hover { color: var(--teal); }
+  .nav-back svg { transition: transform .25s; }
+  .nav-back:hover svg { transform: translateX(-3px); }
+
+  /* ─── HERO ─── */
+  .pro-hero { padding: 150px 0 70px; position: relative; overflow: hidden; }
+  .pro-hero-grid {
+    position: absolute; inset: 0; z-index: 0;
+    background-image:
+      linear-gradient(var(--line-soft) 1px, transparent 1px),
+      linear-gradient(90deg, var(--line-soft) 1px, transparent 1px);
+    background-size: 76px 76px;
+    -webkit-mask-image: radial-gradient(ellipse 70% 60% at 70% 20%, #000 0%, transparent 78%);
+            mask-image: radial-gradient(ellipse 70% 60% at 70% 20%, #000 0%, transparent 78%);
+    opacity: .4;
+  }
+  .pro-hero-in {
+    position: relative; z-index: 2;
+    display: grid; grid-template-columns: 320px 1fr; gap: 56px; align-items: center;
+  }
+  .pro-photo {
+    border: 1px solid var(--line); border-radius: 16px; overflow: hidden;
+    aspect-ratio: 4 / 5; background: var(--panel-2);
+    box-shadow: 0 40px 80px -40px rgba(0,0,0,.85);
+  }
+  .pro-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block; }
+  .pro-role {
+    display: inline-flex; align-items: center; gap: 9px;
+    font-family: var(--mono); font-size: 11px; letter-spacing: .1em;
+    text-transform: uppercase; color: var(--teal); margin-bottom: 20px;
+  }
+  .pro-role .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--teal); }
+  .pro-hero h1 {
+    font-family: var(--serif); font-size: clamp(38px, 5vw, 62px);
+    font-weight: 400; line-height: 1.02; letter-spacing: -0.03em; margin-bottom: 20px;
+  }
+  .pro-hero h1 em { font-style: italic; font-weight: 500; color: var(--teal); }
+  .pro-intro {
+    font-size: 16.5px; color: var(--text-2); font-weight: 300;
+    line-height: 1.62; max-width: 540px; margin-bottom: 28px;
+  }
+  .pro-links { display: flex; gap: 12px; flex-wrap: wrap; }
+  .plink {
+    font-family: var(--sans); font-size: 13px; font-weight: 500;
+    text-decoration: none; padding: 11px 18px; border-radius: 8px;
+    display: inline-flex; align-items: center; gap: 8px;
+    transition: transform .2s, background .2s, border-color .2s, box-shadow .2s;
+  }
+  .plink-pri { background: var(--bone); color: var(--ink); }
+  .plink-pri:hover { transform: translateY(-2px); box-shadow: 0 12px 26px -10px rgba(243,242,238,.22); }
+  .plink-ghost { background: transparent; color: var(--text); border: 1px solid var(--line); }
+  .plink-ghost:hover { border-color: var(--teal-lo); color: var(--teal); transform: translateY(-2px); }
+
+  /* ─── SECTION ─── */
+  .pro-sec { padding: 64px 0; border-top: 1px solid var(--line-soft); }
+  .pro-sec:first-of-type { border-top: none; }
+  .pro-tag {
+    display: flex; align-items: center; gap: 12px;
+    font-family: var(--mono); font-size: 11px; letter-spacing: .12em;
+    text-transform: uppercase; color: var(--teal-lo); margin-bottom: 26px;
+  }
+  .pro-tag::before { content: ''; width: 28px; height: 1px; background: var(--teal-lo); }
+  .pro-h2 {
+    font-family: var(--serif); font-weight: 400;
+    font-size: clamp(26px, 3.2vw, 36px); line-height: 1.12; letter-spacing: -0.025em;
+    margin-bottom: 28px;
+  }
+  .pro-h2 em { font-style: italic; font-weight: 500; color: var(--text-2); }
+  .pro-body p {
+    font-size: 15.5px; color: var(--text-2); font-weight: 300;
+    line-height: 1.7; margin-bottom: 16px; max-width: 760px;
+  }
+  .pro-body p b { color: var(--text); font-weight: 500; }
+
+  /* ─── PROJECT LIST ─── */
+  .proj { border-top: 1px solid var(--line); }
+  .proj-item {
+    padding: 30px 0; border-bottom: 1px solid var(--line);
+    display: grid; grid-template-columns: 180px 1fr; gap: 32px;
+  }
+  .proj-meta .pm-org {
+    font-family: var(--mono); font-size: 11px; color: var(--teal);
+    margin-bottom: 6px;
+  }
+  .proj-meta .pm-tag {
+    font-family: var(--mono); font-size: 10.5px; color: var(--text-3);
+    text-transform: uppercase; letter-spacing: .06em;
+  }
+  .proj-main h3 {
+    font-family: var(--serif); font-size: 21px; font-weight: 500;
+    letter-spacing: -0.012em; margin-bottom: 8px;
+  }
+  .proj-main p {
+    font-size: 14px; color: var(--text-2); font-weight: 300; line-height: 1.62;
+    margin-bottom: 14px;
+  }
+  .proj-tags { display: flex; gap: 7px; flex-wrap: wrap; }
+  .proj-tags span {
+    font-family: var(--mono); font-size: 10px; color: var(--text-3);
+    border: 1px solid var(--line); padding: 3px 8px; border-radius: 4px;
+  }
+  .proj-link {
+    font-family: var(--mono); font-size: 11.5px; color: var(--teal);
+    text-decoration: none; display: inline-flex; align-items: center; gap: 6px;
+    margin-top: 12px;
+  }
+  .proj-link:hover { text-decoration: underline; }
+
+  /* ─── EXPERIENCE ─── */
+  .exp { border-top: 1px solid var(--line); }
+  .exp-item {
+    padding: 26px 0; border-bottom: 1px solid var(--line);
+    display: grid; grid-template-columns: 200px 1fr; gap: 32px; align-items: baseline;
+  }
+  .exp-when {
+    font-family: var(--mono); font-size: 11.5px; color: var(--text-3);
+  }
+  .exp-role h3 {
+    font-family: var(--serif); font-size: 19px; font-weight: 500;
+    letter-spacing: -0.01em; margin-bottom: 3px;
+  }
+  .exp-role .exp-co {
+    font-size: 13px; color: var(--teal); margin-bottom: 12px;
+  }
+  .exp-role ul { list-style: none; }
+  .exp-role li {
+    font-size: 13.5px; color: var(--text-2); font-weight: 300; line-height: 1.6;
+    padding: 5px 0 5px 18px; position: relative;
+  }
+  .exp-role li::before {
+    content: ''; position: absolute; left: 0; top: 12px;
+    width: 5px; height: 5px; border: 1px solid var(--teal-lo); transform: rotate(45deg);
+  }
+
+  /* ─── SKILLS + EDUCATION ─── */
+  .two-col { display: grid; grid-template-columns: 1.3fr 1fr; gap: 56px; }
+  .skill-group { margin-bottom: 22px; }
+  .skill-group .sg-k {
+    font-family: var(--mono); font-size: 10.5px; letter-spacing: .08em;
+    text-transform: uppercase; color: var(--teal-lo); margin-bottom: 10px;
+  }
+  .skill-group .sg-v {
+    font-size: 14px; color: var(--text-2); font-weight: 300; line-height: 1.6;
+  }
+  .edu-item {
+    padding: 16px 0; border-bottom: 1px solid var(--line-soft);
+  }
+  .edu-item:first-child { padding-top: 0; }
+  .edu-item h4 {
+    font-family: var(--serif); font-size: 16px; font-weight: 500; margin-bottom: 3px;
+  }
+  .edu-item .ei-meta { font-family: var(--mono); font-size: 11px; color: var(--text-3); }
+  .cert-list { list-style: none; margin-top: 16px; }
+  .cert-list li {
+    font-size: 13px; color: var(--text-2); font-weight: 300; line-height: 1.55;
+    padding: 5px 0 5px 18px; position: relative;
+  }
+  .cert-list li::before {
+    content: ''; position: absolute; left: 0; top: 11px;
+    width: 5px; height: 5px; border: 1px solid var(--teal-lo); transform: rotate(45deg);
+  }
+
+  /* ─── CTA ─── */
+  .pro-cta {
+    border-top: 1px solid var(--line-soft);
+    padding: 80px 0; text-align: center;
+  }
+  .pro-cta h2 {
+    font-family: var(--serif); font-weight: 400;
+    font-size: clamp(26px, 3.4vw, 38px); letter-spacing: -0.025em;
+    margin-bottom: 16px;
+  }
+  .pro-cta h2 em { font-style: italic; font-weight: 500; color: var(--teal); }
+  .pro-cta p {
+    font-size: 15px; color: var(--text-2); font-weight: 300;
+    margin-bottom: 28px; max-width: 440px; margin-left: auto; margin-right: auto;
+  }
+
+  /* ─── FOOTER ─── */
+  footer { border-top: 1px solid var(--line-soft); padding: 40px 0; }
+  .foot-in {
+    display: flex; justify-content: space-between; align-items: center;
+    flex-wrap: wrap; gap: 16px;
+  }
+  .foot-in p { font-family: var(--mono); font-size: 11px; color: var(--text-3); }
+  .foot-in a { color: var(--text-2); text-decoration: none; }
+  .foot-in a:hover { color: var(--teal); }
+
+  /* ─── REVEAL ─── */
+  .reveal { opacity: 0; transform: translateY(26px); transition: opacity .8s cubic-bezier(.2,.7,.2,1), transform .8s cubic-bezier(.2,.7,.2,1); }
+  .reveal.in { opacity: 1; transform: none; }
+
+  /* ─── RESPONSIVE ─── */
+  @media (max-width: 860px) {
+    .pro-hero-in { grid-template-columns: 1fr; gap: 36px; }
+    .pro-photo { max-width: 280px; }
+    .two-col { grid-template-columns: 1fr; gap: 40px; }
+    .proj-item { grid-template-columns: 1fr; gap: 14px; }
+    .exp-item { grid-template-columns: 1fr; gap: 10px; }
+  }
+  @media (max-width: 600px) {
+    .wrap, .nav-in { padding-left: 20px; padding-right: 20px; }
+    .pro-hero { padding: 124px 0 56px; }
+    .pro-sec { padding: 52px 0; }
+    .pro-links { width: 100%; }
+    .plink { flex: 1; justify-content: center; }
+    .foot-in { flex-direction: column; align-items: flex-start; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ─── NAV ─── -->
+<nav>
+  <div class="nav-in">
+    <a href="../../index.html" class="brand" aria-label="Alpha Global Tech &amp; Consulting">
+      <img src="../../images/logo-dark.png" alt="Alpha Global Tech &amp; Consulting" class="brand-logo">
+    </a>
+    <a href="../../index.html#team" class="nav-back">
+      <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M13 8H4M7.5 3.5 3 8l4.5 4.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Back to AGT
+    </a>
+  </div>
+</nav>
+
+<!-- ─── HERO ─── -->
+<header class="pro-hero">
+  <div class="pro-hero-grid"></div>
+  <div class="wrap">
+    <div class="pro-hero-in">
+      <div class="pro-photo reveal">
+        <img src="../../images/founder.jpg" alt="Aliu Bolade Lawal">
+      </div>
+      <div class="reveal" style="transition-delay:.1s">
+        <div class="pro-role">
+          <span class="dot"></span>
+          Managing Partner · Chief Product Engineer
+        </div>
+        <h1>Aliu Bolade <em>Lawal</em></h1>
+        <p class="pro-intro">
+          A senior software engineer with 8+ years building production
+          systems, distributed services, and APIs across Nigerian Tier 1
+          banking and consumer fintech. Founder of Alpha Global Tech.
+        </p>
+        <div class="pro-links">
+          <a href="cv-aliu-bolade-lawal.pdf" class="plink plink-pri" target="_blank" rel="noopener">
+            Download CV
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M8 2v9M4.5 7.5 8 11l3.5-3.5M3 13h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a href="https://www.linkedin.com/in/aliu-bolade-lawal-971b769a/" class="plink plink-ghost" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="https://github.com/aboladelawal" class="plink plink-ghost" target="_blank" rel="noopener">GitHub</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ─── PROFILE ─── -->
+<section class="pro-sec">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="pro-tag">Profile</div>
+      <h2 class="pro-h2">An engineer who builds the <em>systems</em> and ships the <em>products</em>.</h2>
+      <div class="pro-body">
+        <p>
+          I have spent the last eight years building production software where
+          correctness is not optional. Most of that work has been backend:
+          distributed services, payment and treasury systems, and the integration
+          layers that move money between institutions.
+        </p>
+        <p>
+          At <b>First Bank of Nigeria</b>, working through Openfactor Technologies,
+          I designed and built backend systems handling multi billion naira daily
+          flows, treasury platforms, cross border payment services, and a SWIFT
+          ISO 20022 converter rollout across the group. In parallel I run
+          <b>Alpha Global Tech &amp; Consulting</b>, where I build products end to
+          end and publish reusable banking middleware under commercial license.
+        </p>
+        <p>
+          My strength is the full backend lifecycle: architecture, API design,
+          database schema, integration, deployment, and the operational discipline
+          that keeps a system running once it is live. I am as comfortable with
+          IBM MQ and SWIFT message construction as I am shipping a modern Next.js
+          product to real users.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── SELECTED WORK ─── -->
+<section class="pro-sec">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="pro-tag">Selected work</div>
+      <h2 class="pro-h2">Systems I have <em>designed and built</em>.</h2>
+    </div>
+    <div class="proj reveal">
+
+      <div class="proj-item">
+        <div class="proj-meta">
+          <div class="pm-org">Alpha Global Tech</div>
+          <div class="pm-tag">Product · Live</div>
+        </div>
+        <div class="proj-main">
+          <h3>Picki</h3>
+          <p>
+            A multi vendor commerce platform built solo and shipped to
+            production. 84 REST API routes across vendor onboarding, product
+            management, order lifecycle, payments, and admin operations.
+            Integrates Paystack, Termii, Resend, Fez delivery, and a Llama 3.3
+            conversational AI checkout. Launched April 2026, in beta with 30
+            active vendors.
+          </p>
+          <div class="proj-tags">
+            <span>Next.js 14</span><span>Supabase</span><span>Paystack</span><span>84 API routes</span>
+          </div>
+          <a href="https://picki.store" class="proj-link" target="_blank" rel="noopener">
+            picki.store
+            <svg width="11" height="11" viewBox="0 0 16 16" fill="none"><path d="M5 11 11 5M6 5h5v5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="proj-item">
+        <div class="proj-meta">
+          <div class="pm-org">First Bank of Nigeria</div>
+          <div class="pm-tag">Treasury · via Openfactor</div>
+        </div>
+        <div class="proj-main">
+          <h3>Treasury Investment Platform</h3>
+          <p>
+            Designed and implemented First Bank's Treasury Investment Platform
+            end to end. Core Java on the Newgen iBPS framework with services in
+            Spring Boot, integrated with Finacle for account posting. Covers
+            T-bills, Commercial Paper, FGN Bonds, and Eurobonds through a unified
+            instrument lifecycle. T-bills live in production.
+          </p>
+          <div class="proj-tags">
+            <span>Java</span><span>Spring Boot</span><span>Newgen iBPS</span><span>Finacle</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="proj-item">
+        <div class="proj-meta">
+          <div class="pm-org">First Bank of Nigeria</div>
+          <div class="pm-tag">Payments · via Openfactor</div>
+        </div>
+        <div class="proj-main">
+          <h3>GUSEG Cross Border Payment Service</h3>
+          <p>
+            A Spring Boot 3 and Java 17 service that ingests payment data from an
+            upstream regulatory application, constructs valid SWIFT messages, and
+            dispatches them to the bank's correspondent network. IBM MQ async
+            backbone, tuned retry orchestration, circuit breakers, idempotency,
+            and a startup recovery routine. Cleared a nine finding security review
+            before go live.
+          </p>
+          <div class="proj-tags">
+            <span>Spring Boot 3</span><span>Java 17</span><span>IBM MQ</span><span>SWIFT MT</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="proj-item">
+        <div class="proj-meta">
+          <div class="pm-org">First Bank of Nigeria</div>
+          <div class="pm-tag">Payments · via Openfactor</div>
+        </div>
+        <div class="proj-main">
+          <h3>Estacode USD Payment System</h3>
+          <p>
+            An end to end backend system handling USD payments for staff
+            travelling abroad. Spans a configurable rate engine across a 12 grade
+            by 6 destination matrix, multi stage workflow approval, automated
+            MT202 SWIFT generation, and a configurable multi protocol dispatch
+            switch routing through the converter, the alliance gateway, or IBM MQ.
+          </p>
+          <div class="proj-tags">
+            <span>Spring Boot</span><span>Newgen iBPS</span><span>SWIFT MT202</span><span>Rate engine</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="proj-item">
+        <div class="proj-meta">
+          <div class="pm-org">First Bank of Nigeria</div>
+          <div class="pm-tag">SWIFT · via Openfactor</div>
+        </div>
+        <div class="proj-main">
+          <h3>ISO 20022 Converter Programme</h3>
+          <p>
+            Led the CBPR+ international payment converter rollout across all seven
+            FBN subsidiaries, aligned to the SWIFT ISO 20022 deadline. Planned the
+            local RTGS converter rollout across the same footprint and personally
+            implemented and deployed for Gambia, Ghana, DRC, and Senegal.
+          </p>
+          <div class="proj-tags">
+            <span>CBPR+</span><span>ISO 20022</span><span>SWIFT MX</span><span>7 subsidiaries</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="proj-item">
+        <div class="proj-meta">
+          <div class="pm-org">Alpha Global Tech</div>
+          <div class="pm-tag">Open middleware</div>
+        </div>
+        <div class="proj-main">
+          <h3>ISO 20022 Converter &amp; SFTP-MQ Bridge</h3>
+          <p>
+            Two reusable banking middleware platforms published under AGT. The
+            converter is a bi-directional SWIFT MT to ISO 20022 MX engine with
+            multi-adapter routing and a full operations console. The bridge moves
+            files between SFTP and IBM MQ for partner integration. Public
+            repositories are architecture previews; full implementations are
+            licensed.
+          </p>
+          <div class="proj-tags">
+            <span>Java 17</span><span>Spring Boot 3</span><span>IBM MQ</span><span>Licensed</span>
+          </div>
+          <a href="https://github.com/aboladelawal" class="proj-link" target="_blank" rel="noopener">
+            github.com/aboladelawal
+            <svg width="11" height="11" viewBox="0 0 16 16" fill="none"><path d="M5 11 11 5M6 5h5v5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="proj-item">
+        <div class="proj-meta">
+          <div class="pm-org">Alpha Global Tech</div>
+          <div class="pm-tag">Product · In development</div>
+        </div>
+        <div class="proj-main">
+          <h3>Havyn</h3>
+          <p>
+            A multi tenant child check in and checkout platform for churches,
+            schools, and daycares. Architected the full org, branch, and session
+            hierarchy with role based admin separation. 33 API routes against a 12
+            table Supabase schema, QR based parent pairing, and live location
+            verification. In active development.
+          </p>
+          <div class="proj-tags">
+            <span>Next.js</span><span>Supabase</span><span>Multi-tenant</span><span>33 API routes</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ─── EXPERIENCE ─── -->
+<section class="pro-sec">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="pro-tag">Experience</div>
+      <h2 class="pro-h2">Where I have <em>worked</em>.</h2>
+    </div>
+    <div class="exp reveal">
+
+      <div class="exp-item">
+        <div class="exp-when">Mar 2023 — May 2026</div>
+        <div class="exp-role">
+          <h3>Senior Software Engineer</h3>
+          <div class="exp-co">Openfactor Technologies · Client: First Bank of Nigeria</div>
+          <ul>
+            <li>Designed and shipped an event driven Account Opening and Maintenance workflow on Newgen iBPS, with KYC validation, audit trails, and multi tier authorisation.</li>
+            <li>Refactored the Bulk NIN Linkage utility from seven sequential JARs into a single multi threaded service, diagnosing thread safety issues and adding a circuit breaker for repeated timeouts.</li>
+            <li>Lead technical mentor for two junior engineers under a structured engineering development programme.</li>
+            <li>Engaged senior stakeholders across Treasury, Operations, and IT to scope requirements and align delivery.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-when">Aug 2021 — Feb 2023</div>
+        <div class="exp-role">
+          <h3>Software Engineer</h3>
+          <div class="exp-co">TAJBank Limited</div>
+          <ul>
+            <li>Designed and shipped an event driven Account Opening and Maintenance workflow on Newgen iBPS for Nigeria's pioneering non interest digital bank, cutting cycle time by 50%.</li>
+            <li>Integrated KYC gating and customer modification flows with downstream alerts to compliance teams.</li>
+            <li>Owned BPM measurement and reporting to senior leadership.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-when">Nov 2019 — Dec 2020</div>
+        <div class="exp-role">
+          <h3>Automation Engineer</h3>
+          <div class="exp-co">First Bank of Nigeria</div>
+          <ul>
+            <li>Built the Finacle Limit Enhancement Application, cutting the operational cost of core banking limit enhancement by 50% by removing manual handoffs.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-when">Nov 2017 — Apr 2019</div>
+        <div class="exp-role">
+          <h3>Software Developer, Intern</h3>
+          <div class="exp-co">Gridworx Systems Strategies Limited</div>
+          <ul>
+            <li>Documented requirements and contributed to a KYC address verification solution across design and engineering.</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ─── SKILLS + EDUCATION ─── -->
+<section class="pro-sec">
+  <div class="wrap">
+    <div class="two-col">
+      <div class="reveal">
+        <div class="pro-tag">Technical</div>
+        <h2 class="pro-h2">What I <em>work with</em>.</h2>
+        <div class="skill-group">
+          <div class="sg-k">Languages</div>
+          <div class="sg-v">Java 17, Spring Boot 3, JavaScript, TypeScript, SQL</div>
+        </div>
+        <div class="skill-group">
+          <div class="sg-k">Backend &amp; distributed systems</div>
+          <div class="sg-v">REST APIs, microservices, event driven architecture, async messaging with IBM MQ, retry orchestration, circuit breakers, idempotency, scheduled background services, distributed transactions</div>
+        </div>
+        <div class="skill-group">
+          <div class="sg-k">Databases</div>
+          <div class="sg-v">PostgreSQL, Oracle, schema design, Row Level Security, query optimisation, JPA and Hibernate</div>
+        </div>
+        <div class="skill-group">
+          <div class="sg-k">Cloud &amp; infrastructure</div>
+          <div class="sg-v">Vercel, Supabase, RHEL on premises, Docker, CI/CD with GitHub Actions, structured logging and observability</div>
+        </div>
+        <div class="skill-group">
+          <div class="sg-k">Domain</div>
+          <div class="sg-v">Banking and fintech: payments, treasury, KYC and AML, SWIFT MT and MX, ISO 20022, commerce platforms, multi tenant SaaS</div>
+        </div>
+      </div>
+
+      <div class="reveal" style="transition-delay:.08s">
+        <div class="pro-tag">Education</div>
+        <h2 class="pro-h2">Background.</h2>
+        <div class="edu-item">
+          <h4>MSc, Information Technology</h4>
+          <div class="ei-meta">University of Lagos · 2020–2023</div>
+        </div>
+        <div class="edu-item">
+          <h4>B.Eng, Electrical &amp; Electronics Engineering</h4>
+          <div class="ei-meta">University of Ilorin · 2011–2016</div>
+        </div>
+        <ul class="cert-list">
+          <li>Certified Scrum Master, International Scrum Institute</li>
+          <li>Certificate in IT, British Computer Society</li>
+          <li>Co-author, "Ethical and Responsible AI in Engineering and Construction Projects" (peer reviewed)</li>
+          <li>Co-author, "Digital Twins and AI in Infrastructure Engineering" (peer reviewed)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── CTA ─── -->
+<section class="pro-cta">
+  <div class="wrap">
+    <div class="reveal">
+      <h2>Work with <em>Alpha Global Tech</em>.</h2>
+      <p>Have a system that needs building, or one that needs to keep running? Let us talk.</p>
+      <div class="pro-links" style="justify-content:center">
+        <a href="../../index.html#contact" class="plink plink-pri">
+          Start a project
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h9M8.5 3.5 13 8l-4.5 4.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a href="mailto:aboladelawal@agtconsults.com" class="plink plink-ghost">aboladelawal@agtconsults.com</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── FOOTER ─── -->
+<footer>
+  <div class="wrap">
+    <div class="foot-in">
+      <p>© 2026 Alpha Global Tech &amp; Consulting</p>
+      <p><a href="../../index.html">agtconsults.com</a> · Lagos, Nigeria</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const io = new IntersectionObserver((es) => {
+    es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+</body>
+</html>

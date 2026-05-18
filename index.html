@@ -414,6 +414,46 @@
   }
   .havyn-card img { width: 76%; height: auto; display: block; }
 
+  /* ─── TEAM ─── */
+  #team { border-top: 1px solid var(--line-soft); background: var(--ink-2); }
+  .team-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px;
+  }
+  .team-card {
+    text-decoration: none; display: flex; flex-direction: column;
+    border: 1px solid var(--line); border-radius: 14px; overflow: hidden;
+    background: var(--panel); transition: transform .3s, border-color .3s, box-shadow .3s;
+  }
+  .team-card:hover {
+    transform: translateY(-5px); border-color: var(--teal-lo);
+    box-shadow: 0 26px 54px -24px rgba(0,0,0,.7);
+  }
+  .team-photo { aspect-ratio: 4 / 5; overflow: hidden; background: var(--panel-2); }
+  .team-photo img {
+    width: 100%; height: 100%; object-fit: cover; object-position: center top;
+    filter: grayscale(1) contrast(1.04); transition: filter .4s, transform .5s;
+  }
+  .team-card:hover .team-photo img { filter: grayscale(0) contrast(1); transform: scale(1.03); }
+  .team-info { padding: 26px 26px 28px; display: flex; flex-direction: column; flex: 1; }
+  .team-role {
+    font-family: var(--mono); font-size: 10.5px; letter-spacing: .07em;
+    text-transform: uppercase; color: var(--teal); margin-bottom: 12px;
+  }
+  .team-info h3 {
+    font-family: var(--serif); font-size: 23px; font-weight: 500;
+    letter-spacing: -0.015em; margin-bottom: 10px; color: var(--text);
+  }
+  .team-info p {
+    font-size: 13.5px; color: var(--text-2); font-weight: 300;
+    line-height: 1.6; flex: 1; margin-bottom: 20px;
+  }
+  .team-more {
+    font-family: var(--mono); font-size: 11.5px; color: var(--text);
+    display: inline-flex; align-items: center; gap: 8px;
+    transition: color .25s, gap .25s;
+  }
+  .team-card:hover .team-more { color: var(--teal); gap: 12px; }
+
   /* ─── CONTACT ─── */
   #contact { border-top: 1px solid var(--line-soft); background: var(--ink-2); }
   .cta { background: var(--bone); color: var(--ink); border-radius: 20px; padding: 76px 62px; position: relative; overflow: hidden; }
@@ -491,6 +531,7 @@
     .cta-in { grid-template-columns: 1fr; gap: 36px; }
     .foot-grid { grid-template-columns: 1fr 1fr; }
     .svc-grid { grid-template-columns: 1fr; }
+    .team-grid { grid-template-columns: 1fr 1fr; }
   }
   @media (max-width: 620px) {
     .wrap, .nav-in { padding-left: 20px; padding-right: 20px; }
@@ -529,6 +570,7 @@
     .step { grid-template-columns: 1fr; gap: 6px; }
     .step-n { font-size: 32px; }
     .havyn-card { aspect-ratio: 4 / 3; }
+    .team-grid { grid-template-columns: 1fr; }
     .quote-card { padding: 30px; }
     .quote-card blockquote { font-size: 17px; }
   }
@@ -546,7 +588,7 @@
       <a href="#services">What we do</a>
       <a href="#work">Our work</a>
       <a href="#flagship">Picki</a>
-      <a href="#method">How we work</a>
+      <a href="#team">Team</a>
       <a href="#contact" class="nav-cta">Start a project</a>
     </div>
     <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
@@ -857,6 +899,41 @@
   </div>
 </section>
 
+<!-- ─── TEAM ─── -->
+<section id="team" class="sec-pad">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-tag">The team</div>
+      <h2 class="sec-title">The people <em>behind the work</em>.</h2>
+      <p class="sec-desc">
+        AGT is led by its founding engineer, and growing. This is who you
+        work with.
+      </p>
+    </div>
+
+    <div class="team-grid reveal">
+      <a href="team/aboladelawal/" class="team-card">
+        <div class="team-photo">
+          <img src="images/founder.jpg" alt="Aliu Bolade Lawal">
+        </div>
+        <div class="team-info">
+          <div class="team-role">Managing Partner · Chief Product Engineer</div>
+          <h3>Aliu Bolade Lawal</h3>
+          <p>
+            Senior software engineer with 8+ years building production
+            systems for Nigerian Tier 1 banks and consumer fintech. Founder
+            of AGT.
+          </p>
+          <span class="team-more">
+            Read full profile
+            <svg width="13" height="13" viewBox="0 0 16 16" fill="none"><path d="M3 8h9M8.5 3.5 13 8l-4.5 4.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
 <!-- ─── CONTACT ─── -->
 <section id="contact" class="sec-pad">
   <div class="wrap">
@@ -924,8 +1001,8 @@
         <a href="#services">What we do</a>
         <a href="#work">Our work</a>
         <a href="#flagship">Picki</a>
+        <a href="#team">Team</a>
         <a href="#method">How we work</a>
-        <a href="#studio">Studio</a>
       </div>
       <div class="foot-col">
         <h5>Work</h5>
