@@ -5,6 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Alpha Global Tech &amp; Consulting — We engineer what your business runs on</title>
 <meta name="description" content="Alpha Global Tech is an engineering and consulting firm. We build the software, systems, and automation a business runs on, engineered to hold up.">
+<link rel="icon" type="image/png" href="images/icon.png">
+<link rel="shortcut icon" type="image/png" href="images/icon.png">
+<link rel="apple-touch-icon" href="images/icon.png">
+<meta property="og:title" content="Alpha Global Tech &amp; Consulting">
+<meta property="og:description" content="We engineer what your business runs on. Software, automation, and enterprise systems, built to hold up.">
+<meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -67,14 +73,9 @@
     max-width: 1220px; margin: 0 auto; padding: 22px 38px;
     display: flex; align-items: center; justify-content: space-between;
   }
-  .brand { display: flex; align-items: center; gap: 13px; text-decoration: none; }
-  .brand-mark { width: 32px; height: 32px; flex-shrink: 0; }
-  .brand-mark svg { width: 100%; height: 100%; display: block; }
-  .brand-txt {
-    font-family: var(--serif); font-size: 17px; font-weight: 500;
-    color: var(--text); letter-spacing: -0.01em;
-  }
-  .brand-txt b { font-weight: 600; }
+  .brand { display: inline-flex; align-items: center; text-decoration: none; }
+  .brand-logo { height: 28px; width: auto; display: block; }
+  .foot-brand .brand-logo { height: 32px; }
   .nav-links { display: flex; gap: 38px; align-items: center; }
   .nav-links a {
     text-decoration: none; color: var(--text-2);
@@ -538,14 +539,8 @@
 <!-- ─── NAV ─── -->
 <nav id="nav">
   <div class="nav-in">
-    <a href="#" class="brand">
-      <span class="brand-mark">
-        <svg viewBox="0 0 32 32" fill="none">
-          <path d="M16 3 L28 27 L21.5 27 L16 14.5 L10.5 27 L4 27 Z" fill="#e8e8e6"/>
-          <path d="M16 16.5 L19 23 L13 23 Z" fill="#3aa3a0"/>
-        </svg>
-      </span>
-      <span class="brand-txt">Alpha<b>Global</b></span>
+    <a href="#" class="brand" aria-label="Alpha Global Tech &amp; Consulting">
+      <img src="images/logo-dark.png" alt="Alpha Global Tech &amp; Consulting" class="brand-logo">
     </a>
     <div class="nav-links">
       <a href="#services">What we do</a>
@@ -918,14 +913,8 @@
   <div class="wrap">
     <div class="foot-grid">
       <div class="foot-brand">
-        <a href="#" class="brand">
-          <span class="brand-mark">
-            <svg viewBox="0 0 32 32" fill="none">
-              <path d="M16 3 L28 27 L21.5 27 L16 14.5 L10.5 27 L4 27 Z" fill="#e8e8e6"/>
-              <path d="M16 16.5 L19 23 L13 23 Z" fill="#3aa3a0"/>
-            </svg>
-          </span>
-          <span class="brand-txt">Alpha<b>Global</b></span>
+        <a href="#" class="brand" aria-label="Alpha Global Tech &amp; Consulting">
+          <img src="images/logo-dark.png" alt="Alpha Global Tech &amp; Consulting" class="brand-logo">
         </a>
         <p>An engineering and consulting firm. We build the software, systems,
           and automation a business runs on.</p>
