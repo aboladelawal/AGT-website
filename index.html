@@ -521,6 +521,7 @@
     font-family: var(--mono); font-size: 10.5px; letter-spacing: .08em;
     text-transform: uppercase; color: var(--text-3); display: block; margin-bottom: 7px;
   }
+  .cf-opt { color: var(--text-3); opacity: .65; text-transform: none; letter-spacing: 0; }
   .cf input, .cf textarea {
     width: 100%; background: var(--panel); color: var(--text);
     border: 1px solid var(--line); border-radius: 8px;
@@ -1088,6 +1089,10 @@
             <div class="cf">
               <label for="cf-email">Email</label>
               <input id="cf-email" name="email" type="email" placeholder="you@company.com" required>
+            </div>
+            <div class="cf">
+              <label for="cf-phone">Phone <span class="cf-opt">optional</span></label>
+              <input id="cf-phone" name="phone" type="tel" placeholder="+234 ...">
             </div>
             <div class="cf">
               <label for="cf-msg">Project</label>
