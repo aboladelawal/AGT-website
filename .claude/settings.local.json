@@ -1,0 +1,40 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:agtconsults.com)",
+      "Bash(node -e \"console.log\\(process.version\\); console.log\\('WebSocket:', typeof WebSocket\\)\")",
+      "Bash(pkill -f \"cdp-agt\")",
+      "Bash(node /private/tmp/claude-501/-Users-mufasa-Documents-Applications-AGT-website/7257f3e5-6ad1-4ef6-be68-407db0645885/scratchpad/overflow.mjs __TRACKED_VAR__/index.html)",
+      "Bash(pkill -f \"cdp-agt2\")",
+      "Bash(node __TRACKED_VAR__/shot.mjs __TRACKED_VAR__/index.html 375 __TRACKED_VAR__/m375_hero.png 0)",
+      "Bash(node __TRACKED_VAR__/shot.mjs __TRACKED_VAR__/index.html 375 __TRACKED_VAR__/m375_havyn.png 3200)",
+      "Bash(git --no-pager diff --stat)",
+      "Bash(git --no-pager diff --unified=0 index.html)",
+      "Bash(python3 -c \"import re;h=open\\('index.html'\\).read\\(\\);print\\('div open',len\\(re.findall\\(r'<div[\\\\s>]',h\\)\\),'close',len\\(re.findall\\(r'</div>',h\\)\\)\\)\")",
+      "Bash(npm -v)",
+      "Bash(timeout 15 npm ping)",
+      "Bash(npm ping *)",
+      "Bash(echo \"=== exit: $? ===\")",
+      "Bash(pkill -f \"cdp-shots\")",
+      "Bash(node scripts/capture-shots.mjs __TRACKED_VAR__/public/shots)",
+      "Bash(cp -R team public/team)",
+      "Bash(npm install *)",
+      "Bash(npx astro *)",
+      "Bash(npm run *)",
+      "Bash(tee /private/tmp/claude-501/-Users-mufasa-Documents-Applications-AGT-website/7257f3e5-6ad1-4ef6-be68-407db0645885/scratchpad/preview.log)",
+      "Bash(python3 -)",
+      "Bash(awk '{print $5, $9}')",
+      "Bash(awk '{print $5\" bytes \\(html\\)\"}')",
+      "Bash(git checkout *)",
+      "Bash(npm i *)",
+      "Bash(node -e \"console.log\\(require\\('resend/package.json'\\).version\\)\")",
+      "Bash(node --input-type=module -e \"import { Resend } from 'resend'; console.log\\('import OK, Resend is', typeof Resend\\);\")",
+      "Bash(git check-ignore *)",
+      "Bash(pkill -f \"astro preview\")",
+      "Bash(pkill -f \"astro dev\")",
+      "Bash(grep -iA6 \"Resend send error\" /private/tmp/claude-501/-Users-mufasa-Documents-Applications-AGT-website/7257f3e5-6ad1-4ef6-be68-407db0645885/tasks/brjgl2vne.output)",
+      "Bash(curl -sS -o /dev/null -w \"team page status=%{http_code}\\\\n\" \"http://localhost:4321/team/aboladelawal/\")",
+      "Bash(cd *)"
+    ]
+  }
+}
