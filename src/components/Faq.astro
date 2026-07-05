@@ -1,0 +1,74 @@
+---
+const faqs = [
+  {
+    q: 'How does a project start?',
+    a: 'With a conversation. You tell us what you need, we scope it honestly, and we agree on what good looks like before any code is written. Most engagements begin with a short paid discovery so the estimate is real, not a guess.',
+  },
+  {
+    q: 'Do you take small projects, or only large builds?',
+    a: 'Both. We have built full platforms and we have fixed a single broken integration. What matters is whether the work is a fit for how we work, not its size. If it is not a fit, we will say so.',
+  },
+  {
+    q: 'How does licensing work for your banking platforms?',
+    a: 'The ISO 20022 Converter and SFTP-MQ Bridge are licensed for deployment in your environment. The public GitHub repositories are architecture previews. The full implementation, support, and configuration are provided under a commercial license. Talk to us about scope and tiers.',
+  },
+  {
+    q: 'Do you work remotely, or only in Lagos?',
+    a: 'We are based in Lagos and work with clients wherever they are. Engineering work is delivered remotely. For banking deployments that need on-site presence, we plan that into the engagement.',
+  },
+  {
+    q: 'What does it cost?',
+    a: 'It depends on the work, so we do not publish fixed prices. We quote per project after discovery, and for longer engagements we offer a monthly retainer. You will always know the number before we start.',
+  },
+];
+---
+<section id="faq" class="faq bleed-line sec">
+  <div class="wrap">
+    <div class="faq-grid">
+      <div class="faq-head reveal">
+        <p class="eyebrow">How we engage</p>
+        <h2 class="s-title">Questions worth <em>asking first</em>.</h2>
+        <p class="s-sub">A few honest answers before you reach out.</p>
+      </div>
+
+      <div class="faq-list reveal" style="--d:.1s">
+        {faqs.map((f) => (
+          <details class="faq-item">
+            <summary>
+              <span>{f.q}</span>
+              <span class="faq-mark" aria-hidden="true"></span>
+            </summary>
+            <p>{f.a}</p>
+          </details>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .faq { background: var(--bg-1); }
+  .faq-grid { display: grid; grid-template-columns: .8fr 1.2fr; gap: clamp(40px, 6vw, 72px); align-items: start; }
+  .faq-head { position: sticky; top: 130px; }
+  .faq-list { border-top: 1px solid var(--line); }
+  .faq-item { border-bottom: 1px solid var(--line); }
+  .faq-item summary {
+    list-style: none; cursor: pointer; padding: 24px 4px;
+    display: flex; align-items: center; justify-content: space-between; gap: 20px;
+    font-family: var(--serif); font-size: clamp(17px, 2vw, 19px); font-weight: 500;
+    color: var(--text); letter-spacing: -0.01em; transition: color var(--t);
+  }
+  .faq-item summary::-webkit-details-marker { display: none; }
+  .faq-item summary:hover { color: var(--accent); }
+  .faq-mark { position: relative; width: 13px; height: 13px; flex-shrink: 0; }
+  .faq-mark::before, .faq-mark::after { content: ''; position: absolute; background: var(--accent); transition: transform var(--t); }
+  .faq-mark::before { left: 0; top: 6px; width: 13px; height: 1.5px; }
+  .faq-mark::after { left: 6px; top: 0; width: 1.5px; height: 13px; }
+  .faq-item[open] .faq-mark::after { transform: scaleY(0); }
+  .faq-item p { font-size: 14.5px; color: var(--text-2); font-weight: 300; line-height: 1.65; padding: 0 4px 26px; max-width: 640px; }
+
+  @media (max-width: 900px) {
+    .faq-grid { grid-template-columns: 1fr; gap: 36px; }
+    .faq-head { position: static; }
+  }
+</style>

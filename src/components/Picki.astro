@@ -1,0 +1,84 @@
+---
+import ArrowUpRight from './icons/ArrowUpRight.astro';
+---
+<section id="flagship" class="flag bleed-line sec">
+  <div class="wrap">
+    <div class="flag-in reveal">
+      <div class="flag-text">
+        <p class="badge badge-live flag-kick"><span class="pip"></span>Flagship product · Live</p>
+        <h2 class="flag-h2">Picki</h2>
+        <p class="flag-lead">
+          Our first product, and proof of what AGT ships. A commerce platform
+          for Nigerian businesses, where one link becomes a full storefront.
+        </p>
+        <p class="flag-body">
+          AI shopping assistant, flexible payments, delivery built in. Live in
+          market today and trading with real vendors across the country.
+        </p>
+        <div class="flag-meta">
+          <div class="fm">
+            <span class="klabel">Status</span>
+            <span class="fm-v">Live · in market</span>
+          </div>
+          <div class="fm">
+            <span class="klabel">Stack</span>
+            <span class="fm-v">Next.js · Supabase · Paystack</span>
+          </div>
+        </div>
+        <a href="https://picki.store" class="btn btn-accent" target="_blank" rel="noopener">
+          Visit picki.store<ArrowUpRight size={15} />
+        </a>
+      </div>
+
+      <div class="flag-visual">
+        <figure class="frame frame-glow">
+          <div class="frame-bar">
+            <span class="fdot"></span><span class="fdot"></span><span class="fdot"></span>
+            <span class="url">picki.store</span>
+          </div>
+          <img src="/images/picki-home.jpg" alt="The Picki storefront homepage" width="1200" height="820" loading="lazy" decoding="async" />
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .flag { background: var(--bg-1); }
+  .flag-in {
+    display: grid; grid-template-columns: .92fr 1.08fr; gap: clamp(40px, 5vw, 72px);
+    align-items: center;
+  }
+  .flag-kick { margin-bottom: 22px; }
+  .flag-h2 {
+    font-family: var(--serif); font-weight: 500; font-size: var(--fs-h2);
+    letter-spacing: -0.03em; line-height: 1; margin-bottom: 18px;
+  }
+  .flag-lead { font-size: var(--fs-lead); color: var(--text); font-weight: 300; line-height: 1.5; margin-bottom: 14px; }
+  .flag-body { font-size: 15px; color: var(--text-2); font-weight: 300; line-height: 1.62; margin-bottom: 30px; }
+  .flag-meta { display: flex; margin-bottom: 32px; border-top: 1px solid var(--line); }
+  .fm { padding: 18px 30px 0 0; display: flex; flex-direction: column; gap: 6px; }
+  .fm + .fm { padding-left: 30px; border-left: 1px solid var(--line); }
+  .fm-v { font-size: 14px; color: var(--text); }
+
+  .frame {
+    border: 1px solid var(--line); border-radius: var(--r); overflow: hidden;
+    background: var(--surface); box-shadow: var(--shadow-lg);
+  }
+  .frame-glow { box-shadow: 0 40px 90px -46px var(--accent-glow), var(--shadow-lg); }
+  .frame-bar {
+    display: flex; align-items: center; gap: 7px; padding: 12px 16px;
+    border-bottom: 1px solid var(--line); background: var(--bg-2);
+  }
+  .fdot { width: 9px; height: 9px; border-radius: 50%; background: var(--line); }
+  .url {
+    margin-left: 14px; font-family: var(--mono); font-size: 11px; color: var(--accent);
+    background: var(--surface); padding: 4px 12px; border-radius: 6px; border: 1px solid var(--line-soft);
+  }
+  .frame img { width: 100%; height: auto; }
+
+  @media (max-width: 900px) {
+    .flag-in { grid-template-columns: 1fr; gap: 34px; }
+    .flag-visual { order: 2; }
+  }
+</style>

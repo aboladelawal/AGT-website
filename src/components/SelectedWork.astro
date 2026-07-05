@@ -1,0 +1,100 @@
+---
+import ArrowUpRight from './icons/ArrowUpRight.astro';
+
+const prototypes = [
+  {
+    brand: "Gail's Bakery",
+    register: 'Editorial & typographic',
+    note: 'Serif scale, calm rhythm, warmth without clutter.',
+    url: 'https://gails-website.vercel.app/',
+    shot: '/shots/gails.jpg',
+    alt: "Concept rebuild of the Gail's Bakery homepage",
+  },
+  {
+    brand: 'Liquid Death',
+    register: 'Loud & high-energy',
+    note: 'Oversized type, hard contrast, attitude with control.',
+    url: 'https://liquid-death-khaki.vercel.app/',
+    shot: '/shots/liquiddeath.jpg',
+    alt: 'Concept rebuild of the Liquid Death homepage',
+  },
+  {
+    brand: 'Pop Mart',
+    register: 'Playful & colourful',
+    note: 'Motion, character, colour handled with restraint.',
+    url: 'https://pop-mart-iota.vercel.app/',
+    shot: '/shots/popmart.jpg',
+    alt: 'Concept rebuild of the Pop Mart homepage',
+  },
+];
+---
+<section id="selected" class="selected bleed-line sec">
+  <div class="wrap">
+    <div class="s-head reveal">
+      <p class="eyebrow">Selected work · Prototypes</p>
+      <h2 class="s-title">Range, on <em>our own dime</em>.</h2>
+      <p class="s-sub">
+        Self-initiated concept rebuilds of well-known brands, built to show
+        design and front-end craft across very different registers. These are
+        prototypes, not client production sites.
+      </p>
+    </div>
+
+    <div class="proto-grid reveal">
+      {prototypes.map((p, i) => (
+        <a class="proto" href={p.url} target="_blank" rel="noopener"
+           aria-label={`${p.brand} concept rebuild — open live prototype in a new tab`}
+           style={`--d:${i * 0.08}s`}>
+          <div class="proto-shot">
+            <img src={p.shot} alt={p.alt} width="1440" height="900" loading="lazy" decoding="async" />
+            <span class="proto-view">View live<ArrowUpRight size={13} /></span>
+          </div>
+          <div class="proto-body">
+            <div class="proto-top">
+              <h3>{p.brand}</h3>
+              <span class="badge badge-proto">Prototype</span>
+            </div>
+            <p class="proto-reg">{p.register}</p>
+            <p class="proto-note">{p.note}</p>
+          </div>
+        </a>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .selected { background: var(--bg); }
+  .proto-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+
+  .proto {
+    text-decoration: none; display: flex; flex-direction: column;
+    border: 1px solid var(--line); border-radius: var(--r-lg); overflow: hidden;
+    background: var(--surface);
+    transition: transform var(--t) var(--ease), border-color var(--t), box-shadow var(--t);
+  }
+  .proto:hover { transform: translateY(-6px); border-color: var(--accent-deep); box-shadow: var(--shadow-lg); }
+
+  .proto-shot { position: relative; aspect-ratio: 16 / 10; overflow: hidden; background: var(--bg-2); }
+  .proto-shot img {
+    width: 100%; height: 100%; object-fit: cover; object-position: top;
+    transition: transform .6s var(--ease);
+  }
+  .proto:hover .proto-shot img { transform: scale(1.045); }
+  .proto-view {
+    position: absolute; left: 16px; bottom: 16px;
+    display: inline-flex; align-items: center; gap: 7px;
+    font-family: var(--mono); font-size: 11px; letter-spacing: .06em; text-transform: uppercase;
+    color: #041413; background: var(--accent-br); padding: 8px 13px; border-radius: 8px;
+    opacity: 0; transform: translateY(8px); transition: opacity var(--t), transform var(--t) var(--ease);
+  }
+  .proto:hover .proto-view, .proto:focus-visible .proto-view { opacity: 1; transform: none; }
+
+  .proto-body { padding: 24px 24px 26px; display: flex; flex-direction: column; gap: 8px; }
+  .proto-top { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+  .proto-top h3 { font-family: var(--serif); font-size: 22px; font-weight: 500; letter-spacing: -0.015em; color: var(--text); }
+  .proto-reg { font-size: 14px; color: var(--accent-br); font-weight: 400; }
+  .proto-note { font-size: 13.5px; color: var(--text-2); font-weight: 300; line-height: 1.55; }
+
+  @media (max-width: 900px) { .proto-grid { grid-template-columns: 1fr; max-width: 460px; margin-inline: auto; } }
+</style>

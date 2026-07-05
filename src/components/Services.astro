@@ -1,0 +1,48 @@
+---
+const services = [
+  { n: '01', title: 'Custom software', body: 'Web and mobile applications, internal tools, full platforms. Modern stacks, built to be maintained, not just shipped.' },
+  { n: '02', title: 'Process automation', body: 'Workflows, batch jobs, integrations. We find the manual work that drains a team and replace it with something that runs itself.' },
+  { n: '03', title: 'Enterprise architecture', body: 'Systems that talk to each other. Middleware, message queues, file and API integration, with the failure cases handled.' },
+  { n: '04', title: 'Technology consulting', body: 'A second opinion that knows the code. We help teams choose well, scope honestly, and avoid expensive mistakes.' },
+];
+---
+<section id="services" class="services bleed-line sec">
+  <div class="wrap">
+    <div class="s-head reveal">
+      <p class="eyebrow">What we do</p>
+      <h2 class="s-title">An engineering firm, <em>not a category</em>.</h2>
+      <p class="s-sub">
+        We are not tied to one industry or one kind of system. The common
+        thread is how we work, not what we build.
+      </p>
+    </div>
+
+    <div class="svc-grid reveal">
+      {services.map((s, i) => (
+        <article class="svc" style={`--d:${i * 0.05}s`}>
+          <div class="svc-n klabel">{s.n}</div>
+          <h3>{s.title}</h3>
+          <p>{s.body}</p>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .services { background: var(--bg); }
+  .svc-grid {
+    display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px;
+    background: var(--line); border: 1px solid var(--line);
+    border-radius: var(--r); overflow: hidden;
+  }
+  .svc { background: var(--bg-1); padding: clamp(32px, 3.6vw, 44px) clamp(28px, 3vw, 40px); transition: background var(--t); }
+  .svc:hover { background: var(--surface); }
+  .svc-n { color: var(--accent); margin-bottom: 20px; }
+  .svc h3 {
+    font-family: var(--serif); font-size: clamp(20px, 2.4vw, 25px); font-weight: 500;
+    letter-spacing: -0.014em; margin-bottom: 12px;
+  }
+  .svc p { font-size: 14.5px; color: var(--text-2); font-weight: 300; line-height: 1.62; }
+  @media (max-width: 720px) { .svc-grid { grid-template-columns: 1fr; } }
+</style>

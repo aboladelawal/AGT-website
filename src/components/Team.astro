@@ -1,0 +1,60 @@
+---
+import ArrowRight from './icons/ArrowRight.astro';
+---
+<section id="team" class="team bleed-line sec">
+  <div class="wrap">
+    <div class="s-head reveal">
+      <p class="eyebrow">The team</p>
+      <h2 class="s-title">The people <em>behind the work</em>.</h2>
+      <p class="s-sub">
+        AGT is led by its founding engineer, and growing. This is who you
+        work with.
+      </p>
+    </div>
+
+    <div class="team-grid reveal">
+      <a href="/team/aboladelawal/" class="tcard">
+        <div class="tphoto">
+          <img src="/images/founder.jpg" alt="Aliu Bolade Lawal" width="480" height="600" loading="lazy" decoding="async" />
+        </div>
+        <div class="tinfo">
+          <p class="trole">Managing Partner · Chief Product Engineer</p>
+          <h3>Aliu Bolade Lawal</h3>
+          <p class="tbio">
+            Senior software engineer with 8+ years building production
+            systems. Our team has delivered enterprise solutions across
+            banking and fintech through consulting engagements.
+          </p>
+          <span class="tmore">Read full profile<ArrowRight size={13} /></span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .team { background: var(--bg); }
+  .team-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+
+  .tcard {
+    text-decoration: none; display: flex; flex-direction: column;
+    border: 1px solid var(--line); border-radius: var(--r); overflow: hidden;
+    background: var(--surface);
+    transition: transform var(--t) var(--ease), border-color var(--t), box-shadow var(--t);
+  }
+  .tcard:hover { transform: translateY(-5px); border-color: var(--accent-deep); box-shadow: var(--shadow); }
+  .tphoto { aspect-ratio: 4 / 5; overflow: hidden; background: var(--surface-2); }
+  .tphoto img {
+    width: 100%; height: 100%; object-fit: cover; object-position: center top;
+    filter: grayscale(1) contrast(1.03); transition: filter .5s, transform .6s var(--ease);
+  }
+  .tcard:hover .tphoto img { filter: grayscale(0) contrast(1); transform: scale(1.03); }
+  .tinfo { padding: 26px 26px 28px; display: flex; flex-direction: column; flex: 1; }
+  .trole { font-family: var(--mono); font-size: 10.5px; letter-spacing: .07em; text-transform: uppercase; color: var(--accent); margin-bottom: 12px; }
+  .tinfo h3 { font-family: var(--serif); font-size: 23px; font-weight: 500; letter-spacing: -0.015em; margin-bottom: 10px; }
+  .tbio { font-size: 13.5px; color: var(--text-2); font-weight: 300; line-height: 1.6; flex: 1; margin-bottom: 20px; }
+  .tmore { font-family: var(--mono); font-size: 11.5px; color: var(--text); display: inline-flex; align-items: center; gap: 8px; transition: color var(--t), gap var(--t); }
+  .tcard:hover .tmore { color: var(--accent); gap: 12px; }
+
+  @media (max-width: 900px) { .team-grid { grid-template-columns: 1fr; max-width: 400px; } }
+</style>

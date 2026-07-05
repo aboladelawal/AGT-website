@@ -1,0 +1,144 @@
+---
+import ArrowUpRight from './icons/ArrowUpRight.astro';
+import Github from './icons/Github.astro';
+
+const platforms = [
+  {
+    lang: 'Java 17 · Spring Boot 3',
+    title: 'ISO 20022 Converter',
+    desc: 'A SWIFT MT to ISO 20022 MX message converter, both directions. It translates the formats banks have run for decades into the standard their counterparties now expect.',
+    repo: 'https://github.com/aboladelawal/iso20022-converter',
+    shot: '/images/converter.jpg',
+    shotAlt: 'ISO 20022 Converter operations console',
+    console: 'alpha-converter · operations console',
+    points: [
+      ['Message coverage', 'MT103, MT202, MT940 and more'],
+      ['Mapped to MX', 'pacs.008, pacs.009, camt.053, camt.054'],
+      ['Header generation', 'Business Application Header, SAA envelope'],
+      ['Audited', 'full trail, reprocess, encrypted credentials'],
+    ],
+  },
+  {
+    lang: 'Java 17 · Spring Boot 3',
+    title: 'SFTP — MQ Bridge',
+    desc: 'Integration middleware that moves files between SFTP and IBM MQ, both directions. For the common case where partners send files but internal systems read from queues.',
+    repo: 'https://github.com/aboladelawal/sftp-mq-bridge',
+    shot: '/images/bridge.jpg',
+    shotAlt: 'SFTP-MQ Bridge operations console',
+    console: 'alpha-bridge · operations console',
+    points: [
+      ['Outbound', 'polls SFTP, publishes to a target queue'],
+      ['Inbound', 'listens on MQ, writes files back to SFTP'],
+      ['Routing', 'success, error, unsupported, with a replay archive'],
+      ['Resilient', 'retries, dead-letter queue, health checks'],
+    ],
+  },
+];
+---
+<section id="work" class="work bleed-line sec">
+  <div class="wrap">
+    <div class="s-head reveal">
+      <p class="eyebrow">Our work</p>
+      <h2 class="s-title">Built to prove the <em>standard</em>.</h2>
+      <p class="s-sub">
+        Two of our own platforms, engineered for one of the least forgiving
+        environments there is. Financial messaging. Public architecture
+        previews are open on GitHub.
+      </p>
+    </div>
+
+    {platforms.map((p) => (
+      <article class="plat reveal">
+        <header class="plat-head">
+          <div class="plat-id">
+            <div class="plat-kick">
+              <span class="badge badge-plat">Our platform</span>
+              <span class="klabel">{p.lang}</span>
+            </div>
+            <h3>{p.title}</h3>
+            <p>{p.desc}</p>
+          </div>
+          <a href={p.repo} class="plat-link" target="_blank" rel="noopener">
+            <Github size={13} /> Architecture on GitHub <ArrowUpRight size={12} />
+          </a>
+        </header>
+
+        <figure class="frame">
+          <div class="frame-bar">
+            <span class="fdot"></span><span class="fdot"></span><span class="fdot"></span>
+            <span class="url">{p.console}</span>
+          </div>
+          <img src={p.shot} alt={p.shotAlt} width="1600" height="900" loading="lazy" decoding="async" />
+        </figure>
+
+        <ul class="plat-points">
+          {p.points.map(([k, v]) => <li><b>{k}</b> · {v}</li>)}
+        </ul>
+      </article>
+    ))}
+  </div>
+</section>
+
+<style>
+  .work { background: var(--bg-1); }
+  .plat { margin-bottom: clamp(64px, 8vw, 96px); }
+  .plat:last-child { margin-bottom: 0; }
+  .plat-head {
+    display: flex; align-items: flex-end; justify-content: space-between;
+    gap: 30px; margin-bottom: 28px; flex-wrap: wrap;
+  }
+  .plat-id { max-width: 580px; }
+  .plat-kick { display: flex; align-items: center; gap: 12px; margin-bottom: 15px; }
+  .plat-id h3 {
+    font-family: var(--serif); font-size: var(--fs-h3); font-weight: 500;
+    letter-spacing: -0.02em; line-height: 1.08; margin-bottom: 11px;
+  }
+  .plat-id p { font-size: 15px; color: var(--text-2); font-weight: 300; line-height: 1.6; }
+  .plat-link {
+    font-family: var(--mono); font-size: 12px; color: var(--text); text-decoration: none;
+    display: inline-flex; align-items: center; gap: 8px; white-space: nowrap;
+    border-bottom: 1px solid var(--line); padding-bottom: 5px;
+    transition: color var(--t), border-color var(--t);
+  }
+  .plat-link:hover { color: var(--accent); border-color: var(--accent-deep); }
+
+  .frame {
+    border: 1px solid var(--line); border-radius: var(--r); overflow: hidden;
+    background: var(--surface); box-shadow: var(--shadow);
+    transition: transform var(--t) var(--ease), box-shadow var(--t);
+  }
+  .frame:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+  .frame-bar {
+    display: flex; align-items: center; gap: 7px; padding: 12px 16px;
+    border-bottom: 1px solid var(--line); background: var(--bg-2);
+  }
+  .fdot { width: 9px; height: 9px; border-radius: 50%; background: var(--line); }
+  .url {
+    margin-left: 14px; font-family: var(--mono); font-size: 11px; color: var(--text-3);
+    background: var(--surface); padding: 4px 12px; border-radius: 6px; border: 1px solid var(--line-soft);
+  }
+  .frame img { width: 100%; height: auto; max-height: 560px; object-fit: cover; object-position: top; }
+
+  .plat-points {
+    list-style: none; margin-top: 26px;
+    display: grid; grid-template-columns: repeat(2, 1fr);
+    border-top: 1px solid var(--line);
+  }
+  .plat-points li {
+    font-size: 13px; color: var(--text-2); font-weight: 300; line-height: 1.5;
+    padding: 15px 22px 15px 26px; position: relative;
+    border-bottom: 1px solid var(--line-soft); border-right: 1px solid var(--line-soft);
+  }
+  .plat-points li:nth-child(even) { border-right: none; }
+  .plat-points li::before {
+    content: ''; position: absolute; left: 2px; top: 20px;
+    width: 7px; height: 7px; border: 1px solid var(--accent); transform: rotate(45deg);
+  }
+  .plat-points li b { color: var(--text); font-weight: 500; }
+
+  @media (max-width: 620px) {
+    .frame img { max-height: none; object-fit: contain; }
+    .plat-points { grid-template-columns: 1fr; }
+    .plat-points li { border-right: none; }
+  }
+</style>

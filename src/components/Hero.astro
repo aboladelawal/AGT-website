@@ -1,0 +1,118 @@
+---
+import ArrowRight from './icons/ArrowRight.astro';
+---
+<header class="hero" id="top">
+  <!-- live element: a slow, composed gradient mesh — lighting, not decoration -->
+  <div class="hero-mesh" aria-hidden="true">
+    <span class="blob b1"></span>
+    <span class="blob b2"></span>
+    <span class="blob b3"></span>
+  </div>
+  <div class="hero-grid" aria-hidden="true"></div>
+
+  <div class="wrap">
+    <div class="hero-in">
+      <p class="eyebrow reveal">
+        <span class="live-dot"></span>
+        Alpha Global Tech &amp; Consulting · Lagos, Nigeria
+      </p>
+      <h1 class="hero-h1 reveal" style="--d:.08s">
+        We engineer what<br />your business <em>runs on</em>.
+      </h1>
+      <p class="hero-sub reveal" style="--d:.16s">
+        Software, automation, and systems, built to hold up.
+        We take on the work that has to be right.
+      </p>
+      <div class="hero-actions reveal" style="--d:.24s">
+        <a href="#work" class="btn btn-solid">See our work<ArrowRight /></a>
+        <a href="#contact" class="btn btn-ghost">Start a project</a>
+      </div>
+
+      <div class="caprow reveal" style="--d:.32s">
+        <span>Build</span><i></i>
+        <span>Automate</span><i></i>
+        <span>Architect</span><i></i>
+        <span>Advise</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<style>
+  .hero { position: relative; overflow: hidden; padding: clamp(150px, 22vh, 240px) 0 clamp(84px, 12vw, 132px); }
+
+  .hero-mesh { position: absolute; inset: -20% -10% 0; z-index: 0; filter: blur(6px); }
+  .blob { position: absolute; border-radius: 50%; opacity: .5; mix-blend-mode: screen; }
+  .b1 {
+    width: 56vw; height: 56vw; max-width: 760px; max-height: 760px; left: 10%; top: -8%;
+    background: radial-gradient(circle at 50% 50%, var(--accent-glow), transparent 62%);
+    animation: drift1 22s var(--ease) infinite alternate;
+  }
+  .b2 {
+    width: 44vw; height: 44vw; max-width: 620px; max-height: 620px; right: 4%; top: 6%;
+    background: radial-gradient(circle at 50% 50%, rgba(52,183,177,.16), transparent 60%);
+    animation: drift2 26s var(--ease) infinite alternate;
+  }
+  .b3 {
+    width: 40vw; height: 40vw; max-width: 540px; max-height: 540px; left: 34%; top: 24%;
+    background: radial-gradient(circle at 50% 50%, rgba(42,120,150,.14), transparent 62%);
+    animation: drift3 30s var(--ease) infinite alternate;
+  }
+  @keyframes drift1 { from { transform: translate3d(0,0,0) scale(1); } to { transform: translate3d(6%,5%,0) scale(1.12); } }
+  @keyframes drift2 { from { transform: translate3d(0,0,0) scale(1.05); } to { transform: translate3d(-7%,4%,0) scale(.95); } }
+  @keyframes drift3 { from { transform: translate3d(0,0,0) scale(1); } to { transform: translate3d(4%,-6%,0) scale(1.1); } }
+
+  /* faint engineering grid, softly lit */
+  .hero-grid {
+    position: absolute; inset: 0; z-index: 0; opacity: .5;
+    background-image:
+      linear-gradient(var(--line-soft) 1px, transparent 1px),
+      linear-gradient(90deg, var(--line-soft) 1px, transparent 1px);
+    background-size: 82px 82px;
+    -webkit-mask-image: radial-gradient(ellipse 78% 62% at 34% 30%, #000 0%, transparent 80%);
+            mask-image: radial-gradient(ellipse 78% 62% at 34% 30%, #000 0%, transparent 80%);
+  }
+
+  .hero-in { position: relative; z-index: 2; max-width: 940px; }
+
+  .live-dot {
+    width: 7px; height: 7px; border-radius: 50%; background: var(--accent);
+    box-shadow: 0 0 0 0 var(--accent-glow); animation: livepulse 3s infinite;
+  }
+  @keyframes livepulse {
+    0%   { box-shadow: 0 0 0 0 var(--accent-glow); }
+    70%  { box-shadow: 0 0 0 9px rgba(52,183,177,0); }
+    100% { box-shadow: 0 0 0 0 rgba(52,183,177,0); }
+  }
+
+  .hero-h1 {
+    font-family: var(--serif); font-weight: 400; font-size: var(--fs-display);
+    line-height: .98; letter-spacing: -0.035em; margin-bottom: clamp(22px, 3vw, 34px);
+    text-wrap: balance;
+  }
+  .hero-h1 em { font-style: italic; font-weight: 500; color: var(--accent-br); }
+
+  .hero-sub {
+    font-size: var(--fs-lead); line-height: 1.55; color: var(--text-2);
+    max-width: 540px; font-weight: 300; margin-bottom: clamp(32px, 4vw, 46px);
+  }
+  .hero-actions { display: flex; gap: 14px; align-items: center; flex-wrap: wrap; }
+
+  .caprow {
+    margin-top: clamp(52px, 7vw, 72px); padding-top: 26px;
+    border-top: 1px solid var(--line-soft);
+    display: flex; align-items: center; gap: 20px; flex-wrap: wrap;
+  }
+  .caprow span {
+    font-family: var(--mono); font-size: 12px; letter-spacing: .1em;
+    text-transform: uppercase; color: var(--text-2);
+  }
+  .caprow i { width: 4px; height: 4px; border-radius: 50%; background: var(--accent-deep); }
+
+  @media (max-width: 620px) {
+    .hero-h1 br { display: none; }
+    .hero-actions { width: 100%; }
+    .hero-actions .btn { flex: 1; justify-content: center; }
+    .caprow { gap: 14px; }
+  }
+</style>

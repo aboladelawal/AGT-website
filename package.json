@@ -1,0 +1,21 @@
+{
+  "name": "agtconsults-site",
+  "type": "module",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Alpha Global Tech & Consulting — agtconsults.com",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "devDependencies": {
+    "astro": "^5.7.0"
+  },
+  "dependencies": {
+    "@astrojs/vercel": "^8.2.11",
+    "resend": "^6.17.1"
+  }
+}

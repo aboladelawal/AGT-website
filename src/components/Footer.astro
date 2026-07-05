@@ -1,0 +1,67 @@
+---
+const year = 2026;
+---
+<footer class="footer">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a href="#top" class="brand" aria-label="Alpha Global Tech &amp; Consulting — home">
+          <img src="/images/logo-dark.png" alt="Alpha Global Tech &amp; Consulting" width="170" height="32" />
+        </a>
+        <p>An engineering and consulting firm. We build the software, systems, and automation a business runs on.</p>
+      </div>
+
+      <nav class="foot-col" aria-label="Company">
+        <h2>Company</h2>
+        <a href="#services">What we do</a>
+        <a href="#work">Our work</a>
+        <a href="#selected">Selected work</a>
+        <a href="#team">Team</a>
+        <a href="#faq">How we engage</a>
+      </nav>
+
+      <nav class="foot-col" aria-label="Products">
+        <h2>Products</h2>
+        <a href="https://picki.store" target="_blank" rel="noopener">Picki</a>
+        <a href="https://gethavyn.app" target="_blank" rel="noopener">Havyn</a>
+        <a href="https://github.com/aboladelawal/iso20022-converter" target="_blank" rel="noopener">ISO 20022 Converter</a>
+        <a href="https://github.com/aboladelawal/sftp-mq-bridge" target="_blank" rel="noopener">SFTP-MQ Bridge</a>
+      </nav>
+
+      <nav class="foot-col" aria-label="Contact">
+        <h2>Contact</h2>
+        <a href="mailto:info@agtconsults.com">info@agtconsults.com</a>
+        <a href="tel:+2349131356543">+234 913 135 6543</a>
+        <a href="https://www.linkedin.com/in/alpha-global-tech-and-consultings-634340287/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="#contact">Start a project</a>
+      </nav>
+    </div>
+
+    <div class="foot-bot">
+      <p>© {year} Alpha Global Tech &amp; Consulting</p>
+      <p>Growth · Competency · Probity</p>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .footer { border-top: 1px solid var(--line-soft); padding: clamp(52px, 7vw, 68px) 0 40px; background: var(--bg); }
+  .foot-grid { display: grid; grid-template-columns: 1.7fr 1fr 1fr 1fr; gap: clamp(32px, 4vw, 44px); padding-bottom: 46px; border-bottom: 1px solid var(--line-soft); }
+  .foot-brand .brand { display: inline-block; margin-bottom: 18px; }
+  .foot-brand img { height: 32px; width: auto; }
+  .foot-brand p { font-size: 13px; color: var(--text-2); font-weight: 300; line-height: 1.6; max-width: 290px; }
+  .foot-col h2 { font-family: var(--mono); font-size: 10.5px; letter-spacing: .1em; text-transform: uppercase; color: var(--text-3); margin-bottom: 16px; font-weight: 500; }
+  .foot-col a { display: block; text-decoration: none; color: var(--text-2); font-size: 13px; margin-bottom: 11px; font-weight: 300; transition: color var(--t); }
+  .foot-col a:hover { color: var(--accent); }
+  .foot-bot { display: flex; justify-content: space-between; align-items: center; padding-top: 28px; flex-wrap: wrap; gap: 14px; }
+  .foot-bot p { font-family: var(--mono); font-size: 11px; color: var(--text-3); }
+
+  @media (max-width: 760px) {
+    .foot-grid { grid-template-columns: 1fr 1fr; }
+    .foot-brand { grid-column: 1 / -1; }
+  }
+  @media (max-width: 460px) {
+    .foot-grid { grid-template-columns: 1fr; }
+    .foot-bot { flex-direction: column; align-items: flex-start; gap: 8px; }
+  }
+</style>

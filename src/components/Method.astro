@@ -1,0 +1,86 @@
+---
+const steps = [
+  { n: '01', title: 'Read the system first', body: 'We start in the code and the constraints as they actually are. No theorising before the facts are in.' },
+  { n: '02', title: 'Design for what fails', body: 'Retries, idempotency, reconciliation. We assume things break, and build so that nothing important breaks with them.' },
+  { n: '03', title: 'Keep config out of code', body: 'Endpoints, rules, rates all live outside the code. The same system adapts to a new case without a rebuild.' },
+  { n: '04', title: 'Hand over something owned', body: 'Documented, deployable, auditable. We leave a system your team can run without us.' },
+];
+---
+<section id="method" class="method bleed-line sec">
+  <div class="wrap">
+    <div class="method-grid">
+      <div class="method-sticky reveal">
+        <p class="eyebrow">How we work</p>
+        <h2 class="s-title">The part that <em>doesn't change</em>.</h2>
+        <p class="s-sub">
+          Whatever we build, the discipline underneath is the same. It is the
+          reason the work holds up.
+        </p>
+        <figure class="quote">
+          <blockquote>
+            We would rather ship one system that holds under load than ten
+            demos that impress in a meeting.
+          </blockquote>
+          <figcaption>&mdash; <b>Alpha Global engineering</b></figcaption>
+        </figure>
+      </div>
+
+      <ol class="steps reveal" style="--d:.1s">
+        {steps.map((s) => (
+          <li class="step">
+            <span class="step-n">{s.n}</span>
+            <div>
+              <h3>{s.title}</h3>
+              <p>{s.body}</p>
+            </div>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </div>
+</section>
+
+<style>
+  .method { background: var(--bg); }
+  .method-grid { display: grid; grid-template-columns: .82fr 1.18fr; gap: clamp(48px, 7vw, 90px); align-items: start; }
+  .method-sticky { position: sticky; top: 130px; }
+
+  .quote {
+    background: var(--surface); border: 1px solid var(--line); border-radius: var(--r);
+    padding: 36px; margin-top: 34px; position: relative; overflow: hidden;
+  }
+  .quote::before {
+    content: '\201C'; position: absolute; top: -36px; right: 18px;
+    font-family: var(--serif); font-size: 200px; color: var(--line-soft); line-height: 1;
+  }
+  .quote blockquote {
+    font-family: var(--serif); font-style: italic; font-weight: 400;
+    font-size: clamp(18px, 2vw, 20px); line-height: 1.46; color: var(--text);
+    position: relative; margin-bottom: 20px;
+  }
+  .quote figcaption { font-family: var(--mono); font-size: 11px; letter-spacing: .06em; color: var(--text-2); text-transform: uppercase; }
+  .quote figcaption b { color: var(--accent); font-weight: 500; }
+
+  .steps { list-style: none; display: flex; flex-direction: column; }
+  .step {
+    padding: 34px 0; border-top: 1px solid var(--line);
+    display: grid; grid-template-columns: 66px 1fr; gap: 24px;
+  }
+  .step:last-child { border-bottom: 1px solid var(--line); }
+  .step-n {
+    font-family: var(--serif); font-size: 40px; font-weight: 400; color: var(--line);
+    line-height: 1; letter-spacing: -0.02em; transition: color var(--t);
+  }
+  .step:hover .step-n { color: var(--accent); }
+  .step h3 { font-family: var(--serif); font-size: 21px; font-weight: 500; letter-spacing: -0.012em; margin-bottom: 8px; }
+  .step p { font-size: 14.5px; color: var(--text-2); font-weight: 300; line-height: 1.6; }
+
+  @media (max-width: 900px) {
+    .method-grid { grid-template-columns: 1fr; gap: 44px; }
+    .method-sticky { position: static; }
+  }
+  @media (max-width: 560px) {
+    .step { grid-template-columns: 1fr; gap: 6px; }
+    .step-n { font-size: 32px; }
+  }
+</style>
