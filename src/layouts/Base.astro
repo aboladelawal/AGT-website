@@ -78,13 +78,7 @@ const canonical = new URL(Astro.url.pathname, Astro.site ?? 'https://agtconsults
     burger?.addEventListener('click', () => setMenu(!menu?.classList.contains('open')));
     menu?.querySelectorAll('a').forEach((a) => a.addEventListener('click', () => setMenu(false)));
     document.addEventListener('keydown', (e) => { if (e.key === 'Escape') setMenu(false); });
-
-    // ── contact form: submit feedback ──
-    const form = document.getElementById('ctaForm') as HTMLFormElement | null;
-    form?.addEventListener('submit', () => {
-      const b = document.getElementById('cf-btn') as HTMLButtonElement | null;
-      if (b) { b.disabled = true; b.innerHTML = 'Sending&#8230;'; }
-    });
+    // The contact form's submit UX lives in Contact.astro (fetch + inline errors).
   </script>
 </body>
 </html>
