@@ -34,7 +34,11 @@
       "Bash(pkill -f \"astro dev\")",
       "Bash(grep -iA6 \"Resend send error\" /private/tmp/claude-501/-Users-mufasa-Documents-Applications-AGT-website/7257f3e5-6ad1-4ef6-be68-407db0645885/tasks/brjgl2vne.output)",
       "Bash(curl -sS -o /dev/null -w \"team page status=%{http_code}\\\\n\" \"http://localhost:4321/team/aboladelawal/\")",
-      "Bash(cd *)"
+      "Bash(cd *)",
+      "Bash(md5 Aliu_Lawal_CV.pdf team/aboladelawal/cv-aliu-bolade-lawal.pdf public/team/aboladelawal/cv-aliu-bolade-lawal.pdf)",
+      "Bash(python3 -c \"import json,sys;print\\(json.load\\(sys.stdin\\).get\\('scripts'\\)\\)\")",
+      "Bash(curl -s http://localhost:4322/team/aboladelawal/index.html)",
+      "Bash(awk '{print \"main behind by \"$1\", astro-rebuild ahead by \"$2}')"
     ]
   }
 }
